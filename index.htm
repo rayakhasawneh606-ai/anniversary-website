@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Three Months 💗</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <link href="design.css" rel="stylesheet" type="text/css">
+
+  <style>
+    /* ========== BASIC PAGE STYLING ========== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #4b2326, #6a2f35);
+      color: #fff6ec;
+      overflow-x: hidden; /* prevent sideways scroll */
+    }
+
+    /* MAIN CONTENT CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1; /* keeps content above hearts */
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #ffd98e;
+    }
+
+    /* ========== HEART BACKGROUND ========== */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ffd6e8; /* BABY PINK */
+      animation: spin linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ========== COUNTDOWN CARD ========== */
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 25px;
+      margin: 40px auto;
+      max-width: 420px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+
+    .countdown span {
+      font-size: 1.6rem;
+      display: block;
+      color: #ffcad4;
+    }
+
+    /* ========== SECTIONS ========== */
+    .section {
+      margin: 80px 0;
+    }
+
+    .big-number {
+      font-size: 3rem;
+      color: #ffcad4;
+    }
+
+    .milestones {
+      list-style: none;
+      padding: 0;
+    }
+
+    .milestones li {
+      margin: 10px 0;
+    }
+
+    .paragraph {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* ========== PHOTOS ========== */
+    .photo-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .photo-row img {
+      width: 180px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* ========== DOODLES ========== */
+    .doodle {
+      position: absolute;
+      width: 60px;
+      opacity: 0.8;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* ========== SECRET BUTTON ========== */
+    .secret {
+      background: none;
+      border: none;
+      color: #ffb3c1;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-style: italic;
+    }
+  .auto-style1 {
+	  border-color: #000000;
+	border-width: 0;
+	border-collapse: collapse;
+}
+  .auto-style2 {
+	  text-align: left;
+  }
+  .auto-style3 {
+	text-align: center;
+}
+.auto-style4 {
+	text-align: center;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: medium;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.auto-style5 {
+	border-left-style: none;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.auto-style6 {
+	border-left-style: none;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+}
+.auto-style7 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.auto-style8 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+}
+.auto-style9 {
+	border-left-style: none;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEARTS BACKGROUND -->
+  <div class="hearts"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <h1>♡ Happy Three Months My Loveee ♡</h1>
+
+    <!-- COUNTDOWN -->
+    <section class="card">
+      <h2>Our 1 Year</h2>
+      <div class="countdown">
+        <div><span id="months">00</span><small>months</small></div>
+        <div><span id="days">00</span><small>days</small></div>
+        <div><span id="hours">00</span><small>hours</small></div>
+        <div><span id="minutes">00</span><small>minutes</small></div>
+        <div><span id="seconds">00</span><small>seconds</small></div>
+      </div>
+    </section>
+
+    <!-- DAYS SINCE -->
+    <section class="section">
+      <h2>Days since we met</h2>
+      <p class="big-number" id="sinceDays">0</p>
+    </section>
+    <div class="right-side">
+    <h2>Our og duo and pic woahhh.</h2>
+    <div class="photo-side">
+        &nbsp;</div>
+
+    <section class="section split">
+  
+  <!-- LEFT: picture -->
+  <div class="photo-side">
+    <img src="hannah & garrett _ the deal _ off campus _ aesthetic.jpg" alt="us">
+  </div>
+
+  <!-- RIGHT: milestones -->
+  <div class="text-side">
+    <h2>Our milestones ♡</h2>
+    <ul class="milestones">
+      <li>first time we realized how alike we are — Dec 19, 2025</li>
+      <li>first "i miss you" — Dec 21, 2025</li>
+      <li>first time we called each other baby — Dec 22, 2025</li>
+      <li>first "i love you" — Dec 24, 2025</li>
+    </ul>
+  </div>
+
+</section>
+
+  <!-- LEFT: LETTER / PARAGRAPH -->
+  <div class="text-side">
+    <h2>For You ♡</h2>      
+    <p class="auto-style2">
+        hi baby, before you start reading this i just want you to know that this is gonna be super duper long cs its my heart poured out into stupid writing because i cant express it to you irl. to begin with, I don’t think I’ll ever be able to explain how you happened to me in a way that makes sense to anyone else, but maybe that’s the point. Some things don’t come into your life logically,they arrive quietly, unexpectedly, and then suddenly they’re everything to you. You didn’t come into my life when I had it all together. You came when I was confused, tired, and carrying things I didn’t talk about, and somehow you made all of it lighter without even trying or knowing what had been happening. Writing this feels impossible because every word I choose feels too small for what you are to me, but if there’s one thing I know for sure, it’s that meeting you changed me in ways I didn’t even know I needed.
+ Now, im gonna start with writing the first part of my story.
+so to me, We met because you followed me on Instagram, which still feels unreal to me. You were this like super nonchalant, closed off guy, who barely followed anyone back.
+almost like someone i’d be scared to interact wirh. pinky promise. but somehow, out of everyone, you chose to follow me?? like woahh baby im flattered. anyway You had that little “bmf” note and I replied with the most unserious “hihihihi,” not expecting anything to come from it. i thought yiud leave me on delivered tbh. BUUUUUTTTT you replied wirh, “Did I say smth funny? 😔” and then followed it with, “joking. hi” and yes that was it. woaahhh that was the beginning of everything.
+That first night we talked, we talked for LOOONGGF. I don’t think you understand what an achievement that was. I never stay up for anyone i thought that was stupid cs my sleep is way more important than people. I ghost people without thinking twice. bur some flipping how with you time didn’t exist. the conversation just flowed, and for the first time in so long, my mind wasn’t all over the place . and like at that point in my life, ahmed was on my ass confusing me, my emotions were wheoejidfiejr  and I was exhausted FROM EVERYONE But when you were there, I felt comforted. I forgot about everything else and just focused on you lik more specifically on us talking, and like ir just felt easy and not like a chore.
+2 or 3 days in, I knew I liked you. In a “this feels different and I don’t want it to stop” way. We bonded so hard, and so fast baby its like we’d known each other forever. umm we also had so much in common, the same humor, EMOJI TASTE. the same way of thinking, the same rhythm, we were so aligned it shook me. btw baby I still smile thinking about how I rizzed you up in 4 different languages during our first convo. but baby If love were a language, then you are the only word my heart has ever known how to speak. woaahh. im gigging baby i wouldve never thought that i was talking to my boyfriend like that..let alone RIZZING HIM UP? like hello what the helly i swear this feels like a fever dream.
+anyway my loveee you made me happy in a way I hadn’t felt in a long time. You still do. You’ve made me happier than anyone ever has EVER i mean that. before we met i was kinda giving uo on myself and especially on love. I was messy on the inside idk how but i was stressed, and like not eating properly, nor sleeping properly. and then you spawned into my life, and things started making sense again. I started eating better. sleeping better ( i dont mean that literally cs i sacrificed my sleep for you but i mean that i just startef feeling more comfortable in my sleep) even my body healed in ways I never expected woahh like baby my period became regular again after being messed up for so long.  like baby i swear you dont understand. i used to have 3 periods a month THATS MESSED UP MAN. but babyy thats how deeply you affected me, without forcing it or anything you were just being you.and btw baby i’d choose you in every lifetime and every universe but i’d still somehow call it destiny, For in loving you, I have found a fate sweeter than any destiny I could have ever prayed for.
+anywho baby to wrap this part one up, i just want you to know how fucking much i love you. i dont have vocabulary advanced enough to portray my feelings for you but i hope my actions do the talking for me. i promise you do and continue doing what i do, i will do everything in my power to love you so loud that you wont notice who isn’t.  im very much willing to learn new languages for you but you wont let me BUT I WILL DO IT SOMEDAY. unfortunately i cant keep anything from you especially if its exciting so therefore baby you’ll always be able to see right through me and i genuinely hope that you’ll allow me to do the same for you. i trust and love you so much that it defies the limits people have set for both love and trust. i love you so bad that i feel like i’m in a novel from the 1800’s, except im the man whos deeply yearning for um the love of his life. yes baby. to sum up, you’re the color in my life, the stars to my night skies, the sun to my moon ( get it? cs without you i wouldnt be able to shine) and finally, the love i never knew existed but desperately needed. And so my heart having once known yours, will never again remember how to belong anywhere else.
+loving you didn’t feel like falling. it felt like arriving. like my soul had been holding its breath for years and didn’t even realize it until it finally exhaled around you. what we have hasn’t been rushed, but it also hasn’t been slow. it’s been inevitable. that’s the only word that fits. i didn’t have to convince myself to trust you. i didn’t have to fight my instincts or silence the warning bells in my head. for the first time, my instincts weren’t screaming at me to protect myself. they were whispering quietly that i was safe with you.
+before you, my mind was trained to look for exits. every good thing came with a countdown. every smile hid a question mark. happiness always felt temporary, like it was only there to soften the blow of whatever was coming next. i learned to love defensively, quietly, with one foot already stepping back. but you didn’t let me love you that way. not because you demanded more, but because you gave me more than i ever expected without asking for anything in return.
+you dismantled my fears so gently it scared me at first. you didn’t question my insecurities or grow impatient with my past. you never made me feel dramatic or broken for carrying things i didn’t choose. you just stayed. consistently and calmly. you listened in a way that didn’t feel like waiting for your turn to speak. you reassured me in a way that never felt forced or scripted. and somehow, within days, fears that had lived in me for months went quiet. not because i pushed them away, but because you proved they didn’t belong anymore.
+for the first time in so long, my mind wasn’t busy imagining worst case scenarios. i wasn’t checking for signs or bracing myself. i was just loving you. freely. and loudly. without fear. and you never made me feel like too much for it. you never made me feel stupid for loving you. you never punished me for being honest. instead, you met me there. you held my love like it was something precious, not something heavy.
+the way you love me still leaves me in awe. the way you speak to me, the way you look at me even through words on a screen. i could be doing the most ridiculous or mischievous thing and you look at me like i’m something soft and sacred. like i’m adored. you make me feel beautiful without trying to convince me. you make me feel chosen without ever making me compete. you make me feel wanted in a way that doesn’t demand i become smaller or quieter or easier to keep.
+you see me. not the polished version, not the composed one, not the one pretending to be okay. you see the real me. the emotional one. the dramatic one. the one who loves too hard and feels too deeply and gives too much. and instead of running from that, you lean into it. you cherish it. you make me feel like the very things that once made people leave are the reasons you stay.
+you trusted me with the truth of who you are. more specifically your past. and your fears. the battles you fought when no one was there to help . and i need you to know this like genuinely memorize it like your full name baby. NOTHING about your past makes you seem less to me. not a single part of it. if anything, it makes me admire you more. you were hurt in ways you didn’t deserve and you still chose to heal instead of disappear. you chose to grow. you chose to live. and i am so unbearably proud of you that it genuinely hurts me from how much pride i contain.
+loving you has healed me in ways i didn’t know love could heal. my body feels safer. my mind feels calmer. my heart feels steady. i don’t feel like i’m constantly running anymore. i don’t feel like i have to earn love through pain or prove my worth by suffering. you showed me that love can be soft and still strong. that peace doesn’t mean emptiness. it means presence without fear.
+and if i have healed you even a fraction of how you’ve healed me, then i know i’ve done something right in this life.
+i need you to understand this even if you forget everything else i’ve ever said. you are lovable. not despite who you are. not only on your best days. you are lovable entirely. in your past. in your future. your present . in your strength and weakness. in your worst moments and your quiet ones. you ARE worth loving so deeply and genuinely that people run away from it cs of how much you deserve. if anyone ever made you feel like you were too much, the truth is you never were. they just weren’t enough .
+i don’t love you conditionally. i don’t love you cautiously. i love you deliberately ( that means carefully mylove) i love you in a way that chooses you over fear, over doubt, over distance, over time. no over speed HA! ( get it baby cs 
+speed= distance over time..?) okay but anyway i love you in a way that doesn’t flinch at forever. i love you knowing every risk and taking it anyway, because a life without you, would never feel complete.
+if the world ever makes you doubt yourself, i will be your reminder. if you ever feel unworthy, i will be your proof. if you ever forget how unique you are, i will love you loudly enough that you remember. i will choose you on easy days and on hard ones. i will choose you when you are confident and when you are unsure. i will choose you even when you don’t know how to choose yourself.
+you are not a phase to me. you are not a chapter i will outgrow. you are  forever. you are the place my heart returns to when everything else is off. you are the future i see without forcing myself to imagine it. you are the person i would give up comfort, certainty, and familiarity for just to live beside.
+if i had to explain my love for you to the universe, i don’t think language would survive it. what i feel for you lives beyond words. it lives in instinct. in devotion. in the quiet certainty that no matter where life takes me, my heart would still recognize yours. i would find you in every lifetime. i would choose you in every version of myself. i would love you even if it cost me everything, because loving you has already given me more than i ever thought i deserved.
+so if you ever sit there wondering how someone could love you this much, let me answer you now; its because you are worth every second, every tear, every risk, every word i have ever written and every word i will never be able to say. all of this still does not come close to the love i carry for you. but it is my attempt. my offering to you . my forever promise.
+there is something sacred about the way loving you has rearranged the architecture of my soul, like rooms i didn’t know existed suddenly opening up and filling with light, like silence learning how to sing. loving you has made me understand that some connections are not built, they are remembered. as if my heart had always been walking toward you long before my body ever knew your name. you feel like the kind of love that doesn’t announce itself, that doesn’t rush or beg to be seen, but settles deep and stays, patient and unshakable, the way gravity holds the earth without ever needing to prove it. when i think of you, i don’t feel urgency or fear or desperation. i feel permanence ( baby that means permanent or like uhh forever.). i feel the quiet certainty of something that knows it will outlive every storm. i feel a devotion so still and rooted that even doubt wouldn’t dare knock. loving you has made me softer where i was once braced(loving you has made me open to things i never was open to before) braver where i once hesitated, and truer to myself in ways i didn’t think were possible. you didn’t change who i am. you revealed her. you gave me permission to exist without protection , to love without calculating the cost, to feel without preparing for loss. and in doing so, you taught me that love is not something that consumes it is more of something that stabilizes.
+there are moments when i imagine time stretching forward, not in grand scenes or dramatic futures, but in the smallest details: the way i would memorize the sound of your breathing just to know you’re there, the way i would learn your silences as fluently(as well) as your laughter, the way loving you would become a daily language spoken without effort. i imagine a lifetime not as a promise, but as a rhythm . one i would gladly fall into, again and again, until it became indistinguishable ( i cant identify it) from my own heartbeat. you are the kind of person whose presence turns ordinary moments into something memorable, not because they’re extraordinary, but because they’re shared. and i know, with a certainty that doesn’t weaken, that even if the world were to strip everything down to its simplest most naked form, even if all that remained was two people and the truth between them, i would still choose you without hesitation. not because it’s easy. not because it’s safe. but because my soul recognizes yours as something it has always been waiting to stand beside.
+loving you has taught me that devotion is not loud statements or dramatic sacrifices it is the quiet decision to stay, over and over, even when no one is watching. it is the willingness to hold another person’s existence with care, to protect their weaknesses without dimming their fire. it is understanding that loving someone means loving the seasons they haven’t yet lived through, the versions of them they haven’t yet become. and i love you not only for who you are now, but for who you are growing into, for every future self that will carry traces of who you were when i first loved you. there is no finish line to the way i love you. no point at which it settles or fades or completes itself. it only deepens. it only roots further into me. and if love is measured by how much of yourself you are willing to give without losing who you are, then know this:
+loving you has made me more myself than i have ever been.
+you are not the center of my world only because everything else disappears around you. you are the center because everything makes sense with you there. you are the quiet truth my heart returns to when the noise gets too loud, the constant that doesn’t demand attention but asks for it effortlessly. and if there is any legacy i leave behind in this life, let it be that i loved you in a way that was whole, unguarded, and endlessly sincere. that i loved you not as a fleeting chapter, but as a lifelong vow written into the marrow of who i am. that i loved you in a way that did not ask to be remembered, because it was never meant to end.
+i am yours in the loud ways and the quiet ones and in all the ways that matter and i will be always.
+and if one day everything else fades my love for you will still remain standing because loving you was never a moment in my life it was the moment my life finally began. the moment my clock started ticking. 
+      </p>
+    </section>
+    <section class="section">
+      <h2 class="auto-style3">60 reasons why YOU'RE the best boyfriend ♡</h2>
+         	<table style="width: 100%" class="auto-style1">
+    	<tr>
+            <td style="width: 81px; height: 39px;" class="auto-style9">Reason #</td>
+            <td style="height: 39px" class="auto-style4">what you do</td>
+          </tr>
+
+			<tr>
+				<td style="width: 81px" class="auto-style5">1</td>
+				<td class="auto-style7">you make me laugh even when i dont want to</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">2</td>
+				<td class="auto-style7">you remember the teeniest tiniest details abt me</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">3</td>
+				<td class="auto-style7">you always listen to me no matter the time</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">4</td>
+				<td class="auto-style7">youre super duper patient with me</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">5</td>
+				<td class="auto-style7">youre trustworthy and you dont go behind my back</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">6</td>
+				<td class="auto-style7">&nbsp;you respect my boundaries and always make sure to 
+				consent even if its silly.</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">7</td>
+				<td class="auto-style7">you remember important dates</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">8</td>
+				<td class="auto-style7">youre willing to compromise</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">9</td>
+				<td class="auto-style7">youre suuuuper thoughtful even in the smallest wayss</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">10</td>
+				<td class="auto-style7">you can be both serious and unserious when needed</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">11</td>
+				<td class="auto-style7">you always believe in me</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">12</td>
+				<td class="auto-style7">you sacrafice alot of things for me without complaining 
+				about it </td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">13</td>
+				<td class="auto-style7">you surprise me with genuine gestures</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">14</td>
+				<td class="auto-style7">youre loyal and wouldnt even allow&nbsp; me to think the 
+				opposite</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">15</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">16</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">17</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">18</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">19</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">20</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">21</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">22</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">23</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">24</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">25</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">26</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">27</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">28</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">29</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">30</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">31</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">32</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">33</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">34</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">35</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">36</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">37</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">38</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">39</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">40</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">41</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">42</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">43</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">44</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">45</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">46</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">47</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">48</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">49</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">50</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">51</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">52</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">53</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">54</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">55</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">56</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">57</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">58</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style5">59</td>
+				<td class="auto-style7">&nbsp;</td>
+			</tr>
+			<tr>
+				<td style="width: 81px" class="auto-style6">60!!</td>
+				<td class="auto-style8">&nbsp;</td>
+			</tr>
+		</table>
+    </section>
+
+
+    <!-- SECRET -->
+    <button class="secret" onclick="reveal()">click heree</button>
+    <p id="secretText" class="hidden">
+      I don’t know how you fit into my life so naturally, like the missing piece to my incomplete puzzle.
+      I never want to imagine it without you. to many more months babyyy i love you ♡
+    </p>
+
+  </main>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* ====== CONFETTI ON LOAD ====== */
+    window.onload = () => {
+      for (let i = 0; i < 80; i++) {
+        const c = document.createElement("div");
+        c.style.position = "fixed";
+        c.style.width = "6px";
+        c.style.height = "6px";
+        c.style.background = "#ffd6e8";
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.top = "-10px";
+        c.style.opacity = Math.random();
+        c.style.animation = `fall ${2 + Math.random()*3}s linear`;
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 4000);
+      }
+    };
+
+    /* ====== HEART GENERATOR ====== */
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '♡';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.fontSize = (10 + Math.random() * 30) + 'px';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heartsContainer.appendChild(heart);
+    }
+
+    /* ====== COUNTDOWN LOGIC ====== */
+    const startDate = new Date("2025-12-18T20:50:00");
+    const targetDate = new Date("2027-01-01T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = targetDate - now;
+      if (diff < 0) diff = 0;
+
+      const totalDays = Math.floor(diff / (1000*60*60*24));
+      document.getElementById("months").innerText = Math.floor(totalDays / 30);
+      document.getElementById("days").innerText = totalDays % 30;
+      document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
+      document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
+      document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("sinceDays").innerText =
+        Math.floor((now - startDate) / (1000*60*60*24));
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    /* ====== SECRET BUTTON ====== */
+    function reveal() {
+      document.getElementById("secretText").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

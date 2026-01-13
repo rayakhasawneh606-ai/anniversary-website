@@ -1,0 +1,177 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #4b2326, #6a2f35);
+  color: #fff6ec;
+  overflow-x: hidden; /* allow vertical scroll */
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* above hearts + confetti */
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ffd6e8;
+}
+
+/* ===== CARD (COUNTDOWN) ===== */
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 420px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.countdown span {
+  font-size: 1.8rem;
+  display: block;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  margin: 80px 0;
+}
+
+.big-number {
+  font-size: 3rem;
+  color: #ffcad4;
+}
+
+.caption {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* ===== MILESTONES ===== */
+.milestones {
+  list-style: none;
+  padding: 0;
+}
+
+.milestones li {
+  margin: 10px 0;
+}
+
+/* ===== SPLIT PARAGRAPH + PHOTOS ===== */
+.split {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.text-side {
+  flex: 1;
+  text-align: left; /* YOU ASKED FOR THIS */
+  line-height: 1.9;
+}
+
+.photo-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.photo-side img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+
+  .text-side {
+    text-align: center;
+  }
+
+  .photo-side {
+    align-items: center;
+  }
+}
+
+/* ===== SECRET BUTTON ===== */
+.secret {
+  background: none;
+  border: none;
+  color: #ffb3c1;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* ===== HEARTS BACKGROUND ===== */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  color: #ffd1dc; /* BABY PINK */
+  opacity: 0.25;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ===== CONFETTI ===== */
+#confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
