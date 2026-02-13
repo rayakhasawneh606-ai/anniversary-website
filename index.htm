@@ -30,13 +30,12 @@
 }
 
 /* Smooth Reveal */
-..love-hidden {
+.love-hidden {
   height: 0;
   overflow: hidden;
   opacity: 0;
   transition: height 0.8s ease, opacity 0.8s ease;
 }
-
 .love-hidden.show {
   max-height: 5000px; /* big enough for your long paragraph */
   opacity: 1;
@@ -751,7 +750,7 @@ function toggleLove() {
   const paragraph = document.getElementById("loveParagraph");
 
   if (paragraph.style.height && paragraph.style.height !== "0px") {
-    paragraph.style.height = "0";
+    paragraph.style.height = "0px";
     paragraph.style.opacity = "0";
   } else {
     paragraph.style.height = paragraph.scrollHeight + "px";
@@ -761,13 +760,3 @@ function toggleLove() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
