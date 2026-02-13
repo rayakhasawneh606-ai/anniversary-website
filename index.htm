@@ -10,6 +10,38 @@
   <link href="design.css" rel="stylesheet" type="text/css">
 
   <style>
+	  /* ========== HEART REVEAL BUTTON ========== */
+.heart-button {
+  background: #ffcad4;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #4b2326;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.heart-button:hover {
+  background: #ffd98e;
+  transform: scale(1.05);
+}
+
+/* Smooth Reveal */
+.love-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 1s ease, opacity 1s ease;
+}
+
+.love-hidden.show {
+  max-height: 5000px; /* big enough for your long paragraph */
+  opacity: 1;
+  margin-top: 20px;
+}
     /* ========== BASIC PAGE STYLING ========== */
     body {
       margin: 0;
@@ -275,6 +307,12 @@
   <!-- LEFT: LETTER / PARAGRAPH -->
   <div class="text-side">
     <h2>For You ♡</h2>      
+	  <button class="heart-button" onclick="toggleLove()">
+  ♡ click me ♡
+</button>
+
+<div id="loveParagraph" class="love-hidden">
+div>
     <p class="auto-style2">
         hi baby, before you start reading this i just want you to know that this is gonna be super duper long cs its my heart poured out into stupid writing because i cant express it to you irl. to begin with, I don’t think I’ll ever be able to explain how you happened to me in a way that makes sense to anyone else, but maybe that’s the point. Some things don’t come into your life logically,they arrive quietly, unexpectedly, and then suddenly they’re everything to you. You didn’t come into my life when I had it all together. You came when I was confused, tired, and carrying things I didn’t talk about, and somehow you made all of it lighter without even trying or knowing what had been happening. Writing this feels impossible because every word I choose feels too small for what you are to me, but if there’s one thing I know for sure, it’s that meeting you changed me in ways I didn’t even know I needed.
  Now, im gonna start with writing the first part of my story.
@@ -707,9 +745,16 @@ till the end mylove
       document.getElementById("secretText").style.display = "block";
     }
   </script>
-
+	
+<script>
+  function toggleLove() {
+    const paragraph = document.getElementById("loveParagraph");
+    paragraph.classList.toggle("show");
+  }
+</script>
 </body>
 </html>
+
 
 
 
