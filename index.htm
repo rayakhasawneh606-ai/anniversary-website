@@ -30,11 +30,11 @@
 }
 
 /* Smooth Reveal */
-.love-hidden {
-  max-height: 0;
+..love-hidden {
+  height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 1s ease, opacity 1s ease;
+  transition: height 0.8s ease, opacity 0.8s ease;
 }
 
 .love-hidden.show {
@@ -312,7 +312,6 @@
 </button>
 
 <div id="loveParagraph" class="love-hidden">
-div>
     <p class="auto-style2">
         hi baby, before you start reading this i just want you to know that this is gonna be super duper long cs its my heart poured out into stupid writing because i cant express it to you irl. to begin with, I don’t think I’ll ever be able to explain how you happened to me in a way that makes sense to anyone else, but maybe that’s the point. Some things don’t come into your life logically,they arrive quietly, unexpectedly, and then suddenly they’re everything to you. You didn’t come into my life when I had it all together. You came when I was confused, tired, and carrying things I didn’t talk about, and somehow you made all of it lighter without even trying or knowing what had been happening. Writing this feels impossible because every word I choose feels too small for what you are to me, but if there’s one thing I know for sure, it’s that meeting you changed me in ways I didn’t even know I needed.
  Now, im gonna start with writing the first part of my story.
@@ -380,6 +379,7 @@ it is who i am, who ive become.
 till the end mylove 
 
 	</p>
+</div>
      <section class="section">
       <h2 class="auto-style3">60 reasons why YOU'RE the best boyfriend ♡</h2>
          	<table style="width: 100%" class="auto-style1">
@@ -747,13 +747,21 @@ till the end mylove
   </script>
 	
 <script>
-  function toggleLove() {
-    const paragraph = document.getElementById("loveParagraph");
-    paragraph.classList.toggle("show");
+function toggleLove() {
+  const paragraph = document.getElementById("loveParagraph");
+
+  if (paragraph.style.height && paragraph.style.height !== "0px") {
+    paragraph.style.height = "0";
+    paragraph.style.opacity = "0";
+  } else {
+    paragraph.style.height = paragraph.scrollHeight + "px";
+    paragraph.style.opacity = "1";
   }
+}
 </script>
 </body>
 </html>
+
 
 
 
