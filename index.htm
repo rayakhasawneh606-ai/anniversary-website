@@ -148,21 +148,21 @@
             100% { transform: scale(1); }
         }
 
-        /* === PHOTO + TEXT SIDE‑BY‑SIDE (ALWAYS ROW, NEVER STACK) === */
-        .split {
+        /* PHOTO + CAPTION ROW (always side‑by‑side, left aligned) */
+        .photo-caption-row {
             display: flex;
-            flex-wrap: nowrap;        /* never wrap */
+            flex-wrap: nowrap;
             gap: 24px;
             align-items: flex-start;
             margin: 40px 0;
             text-align: left;
         }
-        .photo-side {
+        .photo-caption-row .photo-side {
             flex: 0 1 auto;
-            max-width: 280px;        /* photo won't get too wide */
+            max-width: 280px;
             width: 100%;
         }
-        .photo-side img {
+        .photo-caption-row .photo-side img {
             width: 100%;
             height: auto;
             border-radius: 28px;
@@ -170,20 +170,30 @@
             transition: transform var(--transition-smooth);
             object-fit: cover;
         }
-        .photo-side img:hover { transform: scale(1.02); }
-
-        .text-side {
+        .photo-caption-row .photo-side img:hover { transform: scale(1.02); }
+        .photo-caption-row .caption-text {
             flex: 1 1 auto;
             text-align: left;
-            min-width: 0;            /* allows text to wrap */
+            min-width: 0;
+            display: flex;
+            align-items: center;
         }
-        .text-side h2 {
-            text-align: left;
-            margin-bottom: 10px;
+        .photo-caption-row .caption-text h2 {
+            margin-bottom: 0;
         }
 
+        /* MILESTONES SECTION (separate) */
+        .milestones-section {
+            text-align: left;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        .milestones-section h2 {
+            text-align: left;
+            margin-bottom: 16px;
+        }
         .milestones {
-            list-style: none; padding: 0; margin: 20px 0;
+            list-style: none; padding: 0; margin: 0;
         }
         .milestones li {
             margin: 12px 0; padding: 10px 18px; background: var(--card-bg);
@@ -375,23 +385,15 @@
             background: rgba(0,0,0,0.4);
         }
 
-        /* On very small screens, keep side‑by‑side but allow photo to shrink a bit more */
         @media (max-width: 500px) {
-            .split {
+            .photo-caption-row {
                 gap: 12px;
             }
-            .photo-side {
-                max-width: 45%;   /* photo takes less than half */
+            .photo-caption-row .photo-side {
+                max-width: 45%;
             }
-            .photo-side img {
-                border-radius: 20px;
-            }
-            .text-side {
-                font-size: 0.85rem;
-            }
-            .milestones li {
-                font-size: 0.8rem;
-                padding: 8px 12px;
+            .photo-caption-row .caption-text h2 {
+                font-size: 1rem;
             }
         }
 
@@ -444,21 +446,25 @@
         <p class="big-number" id="sinceDays">0</p>
     </section>
 
-    <!-- PHOTO + MILESTONES (ALWAYS SIDE‑BY‑SIDE, LEFT ALIGNED) -->
-    <section class="split">
+    <!-- PHOTO + CAPTION (side-by-side, left aligned) -->
+    <section class="photo-caption-row">
         <div class="photo-side">
             <img src="IMG_1251.jpeg" alt="usss" onerror="this.src='https://placehold.co/300x300/ffcad4/4b2326?text=Us+%F0%9F%92%95'">
         </div>
-        <div class="text-side">
+        <div class="caption-text">
             <h2>Our og duo and pic woahhh.</h2>
-            <h2>Our milestones ♡</h2>
-            <ul class="milestones">
-                <li>first time we realized how alike we are — Dec 19, 2025</li>
-                <li>first "i miss you" — Dec 21, 2025</li>
-                <li>first time we called each other baby — Dec 22, 2025</li>
-                <li>first "i love you" — Dec 24, 2025</li>
-            </ul>
         </div>
+    </section>
+
+    <!-- MILESTONES SECTION (separate) -->
+    <section class="milestones-section">
+        <h2>Our milestones ♡</h2>
+        <ul class="milestones">
+            <li>first time we realized how alike we are — Dec 19, 2025</li>
+            <li>first "i miss you" — Dec 21, 2025</li>
+            <li>first time we called each other baby — Dec 22, 2025</li>
+            <li>first "i love you" — Dec 24, 2025</li>
+        </ul>
     </section>
 
     <!-- FOR YOU CARD -->
