@@ -148,28 +148,34 @@
             100% { transform: scale(1); }
         }
 
-        /* === SIDE-BY-SIDE PHOTO + TEXT (FIXED) === */
+        /* === PHOTO + TEXT SIDE‑BY‑SIDE (ALWAYS ROW, NEVER STACK) === */
         .split {
-            display: grid;
-            grid-template-columns: minmax(180px, 280px) 1fr;
-            gap: 30px;
-            align-items: start;
+            display: flex;
+            flex-wrap: nowrap;        /* never wrap */
+            gap: 24px;
+            align-items: flex-start;
             margin: 40px 0;
             text-align: left;
         }
         .photo-side {
+            flex: 0 1 auto;
+            max-width: 280px;        /* photo won't get too wide */
             width: 100%;
         }
         .photo-side img {
             width: 100%;
-            max-width: 100%;
+            height: auto;
             border-radius: 28px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             transition: transform var(--transition-smooth);
+            object-fit: cover;
         }
         .photo-side img:hover { transform: scale(1.02); }
+
         .text-side {
+            flex: 1 1 auto;
             text-align: left;
+            min-width: 0;            /* allows text to wrap */
         }
         .text-side h2 {
             text-align: left;
@@ -369,18 +375,31 @@
             background: rgba(0,0,0,0.4);
         }
 
+        /* On very small screens, keep side‑by‑side but allow photo to shrink a bit more */
+        @media (max-width: 500px) {
+            .split {
+                gap: 12px;
+            }
+            .photo-side {
+                max-width: 45%;   /* photo takes less than half */
+            }
+            .photo-side img {
+                border-radius: 20px;
+            }
+            .text-side {
+                font-size: 0.85rem;
+            }
+            .milestones li {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+        }
+
         @media (max-width: 600px) {
             .container { padding: 30px 14px 50px; }
             .card { padding: 20px 14px; margin: 22px auto; }
             .countdown span { font-size: 1.3rem; }
             .big-number { font-size: 2.6rem; }
-            .split {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                text-align: center;
-            }
-            .photo-side img { max-width: 260px; margin: 0 auto; }
-            .text-side h2 { text-align: center; }
             .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
             .img-placeholder { font-size: 2.4rem; }
             .love-hidden.show { max-height: 55vh; }
@@ -425,7 +444,7 @@
         <p class="big-number" id="sinceDays">0</p>
     </section>
 
-    <!-- PHOTO + MILESTONES (now side-by-side) -->
+    <!-- PHOTO + MILESTONES (ALWAYS SIDE‑BY‑SIDE, LEFT ALIGNED) -->
     <section class="split">
         <div class="photo-side">
             <img src="IMG_1251.jpeg" alt="usss" onerror="this.src='https://placehold.co/300x300/ffcad4/4b2326?text=Us+%F0%9F%92%95'">
