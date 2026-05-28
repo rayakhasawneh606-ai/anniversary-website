@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,41 +7,8 @@
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
-  <link href="design.css" rel="stylesheet" type="text/css">
-
   <style>
-	  /* ========== HEART REVEAL BUTTON ========== */
-.heart-button {
-  background: #ffcad4;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 40px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  color: #4b2326;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.heart-button:hover {
-  background: #ffd98e;
-  transform: scale(1.05);
-}
-
-/* Smooth Reveal */
-.love-hidden {
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: height 0.8s ease, opacity 0.8s ease;
-}
-.love-hidden.show {
-  max-height: 5000px; /* big enough for your long paragraph */
-  opacity: 1;
-  margin-top: 20px;
-}
-    /* ========== BASIC PAGE STYLING ========== */
+    /* ========== ORIGINAL STYLES (PRESERVED) ========== */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -75,7 +42,7 @@
 
     .heart {
       position: absolute;
-      color: #ffd6e8; /* BABY PINK */
+      color: #ffd6e8;
       animation: spin linear infinite;
       opacity: 0.7;
     }
@@ -175,589 +142,540 @@
       margin-top: 20px;
       font-style: italic;
     }
-  .auto-style1 {
-	  border-color: #000000;
-	border-width: 0;
-	border-collapse: collapse;
-}
-  .auto-style2 {
-	  text-align: left;
-  }
-  .auto-style3 {
-	text-align: center;
-}
-.auto-style4 {
-	text-align: center;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-style: none;
-	border-right-width: medium;
-	border-top-style: none;
-	border-top-width: medium;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
-.auto-style5 {
-	border-left-style: none;
-	border-left-width: medium;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
-.auto-style6 {
-	border-left-style: none;
-	border-left-width: medium;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-bottom-style: none;
-	border-bottom-width: medium;
-}
-.auto-style7 {
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-style: none;
-	border-right-width: medium;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
-.auto-style8 {
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-style: none;
-	border-right-width: medium;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-bottom-style: none;
-	border-bottom-width: medium;
-}
-.auto-style9 {
-	border-left-style: none;
-	border-left-width: medium;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-style: none;
-	border-top-width: medium;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
+
+    /* ========== HEART REVEAL BUTTON ========== */
+    .heart-button {
+      background: #ffcad4;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 40px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #4b2326;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .heart-button:hover {
+      background: #ffd98e;
+      transform: scale(1.05);
+    }
+
+    /* Smooth Reveal for long letter */
+    .love-hidden {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: height 0.8s ease, opacity 0.8s ease;
+    }
+    .love-hidden.show {
+      max-height: 5000px;
+      opacity: 1;
+      margin-top: 20px;
+    }
+
+    /* Split layout (photo + milestones) */
+    .split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .photo-side {
+      flex: 1;
+      min-width: 200px;
+    }
+    .photo-side img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 28px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .text-side {
+      flex: 1;
+      min-width: 240px;
+      text-align: left;
+    }
+    .text-side h2 {
+      text-align: center;
+    }
+    .milestones {
+      list-style: none;
+      padding: 0;
+    }
+    .milestones li {
+      margin: 12px 0;
+      background: rgba(255,255,240,0.08);
+      padding: 8px 15px;
+      border-radius: 30px;
+    }
+
+    /* Table styling (original) */
+    .auto-style1 {
+      border-color: #000000;
+      border-width: 0;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .auto-style2 { text-align: left; }
+    .auto-style3 { text-align: center; }
+    .auto-style4 {
+      text-align: center;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-style: none;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+    .auto-style5 {
+      border-left-style: none;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+    .auto-style6 {
+      border-left-style: none;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-bottom-style: none;
+    }
+    .auto-style7 {
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-style: none;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+    .auto-style8 {
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-style: none;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-bottom-style: none;
+    }
+    .auto-style9 {
+      border-left-style: none;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-style: none;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+    td {
+      padding: 8px 10px;
+    }
+
+    /* ========== NEW GALLERY STYLES (ADDED, NO ALTERATIONS TO EXISTING) ========== */
+    .gallery-section {
+      margin: 80px 0;
+      background: rgba(255,255,255,0.05);
+      border-radius: 40px;
+      padding: 30px 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .memory-card {
+      background: rgba(0,0,0,0.35);
+      border-radius: 28px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(255,217,142,0.4);
+      backdrop-filter: blur(2px);
+    }
+    .memory-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 28px rgba(0,0,0,0.4);
+    }
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, #b55b4a, #d9897a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.6rem;
+      color: #fff2e0;
+    }
+    .memory-title {
+      padding: 14px 12px 6px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,215,140,0.3);
+    }
+    .hidden-message {
+      max-height: 0;
+      padding: 0 12px;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s ease;
+      background: rgba(0,0,0,0.6);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: #ffefc0;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+    }
+    .hidden-message.show {
+      max-height: 130px;
+      padding: 12px;
+    }
+    .tap-hint {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      display: block;
+      margin-top: 4px;
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- HEARTS BACKGROUND -->
-  <div class="hearts"></div>
+<!-- HEARTS BACKGROUND -->
+<div class="hearts"></div>
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
+<!-- MAIN CONTENT -->
+<main class="container">
 
-    <h1>♡ Happy valentines My Loveee ♡</h1>
+  <h1>♡ Happy valentines My Loveee ♡</h1>
 
-    <!-- COUNTDOWN -->
-    <section class="card">
-      <h2>Our 1 Year</h2>
-      <div class="countdown">
-        <div><span id="months">00</span><small>months</small></div>
-        <div><span id="days">00</span><small>days</small></div>
-        <div><span id="hours">00</span><small>hours</small></div>
-        <div><span id="minutes">00</span><small>minutes</small></div>
-        <div><span id="seconds">00</span><small>seconds</small></div>
+  <!-- COUNTDOWN -->
+  <section class="card">
+    <h2>Our 1 Year</h2>
+    <div class="countdown">
+      <div><span id="months">00</span><small>months</small></div>
+      <div><span id="days">00</span><small>days</small></div>
+      <div><span id="hours">00</span><small>hours</small></div>
+      <div><span id="minutes">00</span><small>minutes</small></div>
+      <div><span id="seconds">00</span><small>seconds</small></div>
+    </div>
+  </section>
+
+  <!-- DAYS SINCE -->
+  <section class="section">
+    <h2>Days since we met</h2>
+    <p class="big-number" id="sinceDays">0</p>
+  </section>
+
+  <!-- SPLIT SECTION: PHOTO + MILESTONES (ORIGINAL) -->
+  <div class="right-side">
+    <h2>Our og duo and pic woahhh.</h2>
+    <div class="photo-side">&nbsp;</div>
+
+    <section class="split">
+      <div class="photo-side">
+        <img src="IMG_1251.jpeg" alt="usss" onerror="this.src='https://placehold.co/300x300/ffcad4/4b2326?text=Us+%F0%9F%92%95'">
+      </div>
+      <div class="text-side">
+        <h2>Our milestones ♡</h2>
+        <ul class="milestones">
+          <li>first time we realized how alike we are — Dec 19, 2025</li>
+          <li>first "i miss you" — Dec 21, 2025</li>
+          <li>first time we called each other baby — Dec 22, 2025</li>
+          <li>first "i love you" — Dec 24, 2025</li>
+        </ul>
       </div>
     </section>
 
-    <!-- DAYS SINCE -->
+    <!-- LETTER SECTION (ORIGINAL) -->
+    <div class="text-side">
+      <h2>For You ♡</h2>      
+      <button class="heart-button" onclick="toggleLove()">♡ click me ♡</button>
+      <div id="loveParagraph" class="love-hidden">
+        <p class="auto-style2">
+          hi baby, before you start reading this i just want you to know that this is gonna be super duper long cs its my heart poured out into stupid writing because i cant express it to you irl. to begin with, I don’t think I’ll ever be able to explain how you happened to me in a way that makes sense to anyone else, but maybe that’s the point. Some things don’t come into your life logically,they arrive quietly, unexpectedly, and then suddenly they’re everything to you. You didn’t come into my life when I had it all together. You came when I was confused, tired, and carrying things I didn’t talk about, and somehow you made all of it lighter without even trying or knowing what had been happening. Writing this feels impossible because every word I choose feels too small for what you are to me, but if there’s one thing I know for sure, it’s that meeting you changed me in ways I didn’t even know I needed.
+          Now, im gonna start with writing the first part of my story.
+          so to me, We met because you followed me on Instagram, which still feels unreal to me. You were this like super nonchalant, closed off guy, who barely followed anyone back.
+          almost like someone i’d be scared to interact wirh. pinky promise. but somehow, out of everyone, you chose to follow me?? like woahh baby im flattered. anyway You had that little “bmf” note and I replied with the most unserious “hihihihi,” not expecting anything to come from it. i thought yiud leave me on delivered tbh. BUUUUUTTTT you replied wirh, “Did I say smth funny? 😔” and then followed it with, “joking. hi” and yes that was it. woaahhh that was the beginning of everything.
+          That first night we talked, we talked for LOOONGGF. I don’t think you understand what an achievement that was. I never stay up for anyone i thought that was stupid cs my sleep is way more important than people. I ghost people without thinking twice. bur some flipping how with you time didn’t exist. the conversation just flowed, and for the first time in so long, my mind wasn’t all over the place . and like at that point in my life, ahmed was on my ass confusing me, my emotions were wheoejidfiejr  and I was exhausted FROM EVERYONE But when you were there, I felt comforted. I forgot about everything else and just focused on you lik more specifically on us talking, and like ir just felt easy and not like a chore.
+          2 or 3 days in, I knew I liked you. In a “this feels different and I don’t want it to stop” way. We bonded so hard, and so fast baby its like we’d known each other forever. umm we also had so much in common, the same humor, EMOJI TASTE. the same way of thinking, the same rhythm, we were so aligned it shook me. btw baby I still smile thinking about how I rizzed you up in 4 different languages during our first convo. but baby If love were a language, then you are the only word my heart has ever known how to speak. woaahh. im gigging baby i wouldve never thought that i was talking to my boyfriend like that..let alone RIZZING HIM UP? like hello what the helly i swear this feels like a fever dream.
+          anyway my loveee you made me happy in a way I hadn’t felt in a long time. You still do. You’ve made me happier than anyone ever has EVER i mean that. before we met i was kinda giving uo on myself and especially on love. I was messy on the inside idk how but i was stressed, and like not eating properly, nor sleeping properly. and then you spawned into my life, and things started making sense again. I started eating better. sleeping better ( i dont mean that literally cs i sacrificed my sleep for you but i mean that i just startef feeling more comfortable in my sleep) even my body healed in ways I never expected woahh like baby my period became regular again after being messed up for so long.  like baby i swear you dont understand. i used to have 3 periods a month THATS MESSED UP MAN. but babyy thats how deeply you affected me, without forcing it or anything you were just being you.and btw baby i’d choose you in every lifetime and every universe but i’d still somehow call it destiny, For in loving you, I have found a fate sweeter than any destiny I could have ever prayed for.
+          anywho baby to wrap this part one up, i just want you to know how fucking much i love you. i dont have vocabulary advanced enough to portray my feelings for you but i hope my actions do the talking for me. i promise you do and continue doing what i do, i will do everything in my power to love you so loud that you wont notice who isn’t.  im very much willing to learn new languages for you but you wont let me BUT I WILL DO IT SOMEDAY. unfortunately i cant keep anything from you especially if its exciting so therefore baby you’ll always be able to see right through me and i genuinely hope that you’ll allow me to do the same for you. i trust and love you so much that it defies the limits people have set for both love and trust. i love you so bad that i feel like i’m in a novel from the 1800’s, except im the man whos deeply yearning for um the love of his life. yes baby. to sum up, you’re the color in my life, the stars to my night skies, the sun to my moon ( get it? cs without you i wouldnt be able to shine) and finally, the love i never knew existed but desperately needed. And so my heart having once known yours, will never again remember how to belong anywhere else.
+          loving you didn’t feel like falling. it felt like arriving. like my soul had been holding its breath for years and didn’t even realize it until it finally exhaled around you. what we have hasn’t been rushed, but it also hasn’t been slow. it’s been inevitable. that’s the only word that fits. i didn’t have to convince myself to trust you. i didn’t have to fight my instincts or silence the warning bells in my head. for the first time, my instincts weren’t screaming at me to protect myself. they were whispering quietly that i was safe with you.
+          before you, my mind was trained to look for exits. every good thing came with a countdown. every smile hid a question mark. happiness always felt temporary, like it was only there to soften the blow of whatever was coming next. i learned to love defensively, quietly, with one foot already stepping back. but you didn’t let me love you that way. not because you demanded more, but because you gave me more than i ever expected without asking for anything in return.
+          you dismantled my fears so gently it scared me at first. you didn’t question my insecurities or grow impatient with my past. you never made me feel dramatic or broken for carrying things i didn’t choose. you just stayed. consistently and calmly. you listened in a way that didn’t feel like waiting for your turn to speak. you reassured me in a way that never felt forced or scripted. and somehow, within days, fears that had lived in me for months went quiet. not because i pushed them away, but because you proved they didn’t belong anymore.
+          for the first time in so long, my mind wasn’t busy imagining worst case scenarios. i wasn’t checking for signs or bracing myself. i was just loving you. freely. and loudly. without fear. and you never made me feel like too much for it. you never made me feel stupid for loving you. you never punished me for being honest. instead, you met me there. you held my love like it was something precious, not something heavy.
+          the way you love me still leaves me in awe. the way you speak to me, the way you look at me even through words on a screen. i could be doing the most ridiculous or mischievous thing and you look at me like i’m something soft and sacred. like i’m adored. you make me feel beautiful without trying to convince me. you make me feel chosen without ever making me compete. you make me feel wanted in a way that doesn’t demand i become smaller or quieter or easier to keep.
+          you see me. not the polished version, not the composed one, not the one pretending to be okay. you see the real me. the emotional one. the dramatic one. the one who loves too hard and feels too deeply and gives too much. and instead of running from that, you lean into it. you cherish it. you make me feel like the very things that once made people leave are the reasons you stay.
+          you trusted me with the truth of who you are. more specifically your past. and your fears. the battles you fought when no one was there to help . and i need you to know this like genuinely memorize it like your full name baby. NOTHING about your past makes you seem less to me. not a single part of it. if anything, it makes me admire you more. you were hurt in ways you didn’t deserve and you still chose to heal instead of disappear. you chose to grow. you chose to live. and i am so unbearably proud of you that it genuinely hurts me from how much pride i contain.
+          loving you has healed me in ways i didn’t know love could heal. my body feels safer. my mind feels calmer. my heart feels steady. i don’t feel like i’m constantly running anymore. i don’t feel like i have to earn love through pain or prove my worth by suffering. you showed me that love can be soft and still strong. that peace doesn’t mean emptiness. it means presence without fear.
+          and if i have healed you even a fraction of how you’ve healed me, then i know i’ve done something right in this life.
+          i need you to understand this even if you forget everything else i’ve ever said. you are lovable. not despite who you are. not only on your best days. you are lovable entirely. in your past. in your future. your present . in your strength and weakness. in your worst moments and your quiet ones. you ARE worth loving so deeply and genuinely that people run away from it cs of how much you deserve. if anyone ever made you feel like you were too much, the truth is you never were. they just weren’t enough .
+          i don’t love you conditionally. i don’t love you cautiously. i love you deliberately ( that means carefully mylove) i love you in a way that chooses you over fear, over doubt, over distance, over time. no over speed HA! ( get it baby cs 
+          speed= distance over time..?) okay but anyway i love you in a way that doesn’t flinch at forever. i love you knowing every risk and taking it anyway, because a life without you, would never feel complete.
+          if the world ever makes you doubt yourself, i will be your reminder. if you ever feel unworthy, i will be your proof. if you ever forget how unique you are, i will love you loudly enough that you remember. i will choose you on easy days and on hard ones. i will choose you when you are confident and when you are unsure. i will choose you even when you don’t know how to choose yourself.
+          you are not a phase to me. you are not a chapter i will outgrow. you are  forever. you are the place my heart returns to when everything else is off. you are the future i see without forcing myself to imagine it. you are the person i would give up comfort, certainty, and familiarity for just to live beside.
+          if i had to explain my love for you to the universe, i don’t think language would survive it. what i feel for you lives beyond words. it lives in instinct. in devotion. in the quiet certainty that no matter where life takes me, my heart would still recognize yours. i would find you in every lifetime. i would choose you in every version of myself. i would love you even if it cost me everything, because loving you has already given me more than i ever thought i deserved.
+          so if you ever sit there wondering how someone could love you this much, let me answer you now; its because you are worth every second, every tear, every risk, every word i have ever written and every word i will never be able to say. all of this still does not come close to the love i carry for you. but it is my attempt. my offering to you . my forever promise.
+          there is something sacred about the way loving you has rearranged the architecture of my soul, like rooms i didn’t know existed suddenly opening up and filling with light, like silence learning how to sing. loving you has made me understand that some connections are not built, they are remembered. as if my heart had always been walking toward you long before my body ever knew your name. you feel like the kind of love that doesn’t announce itself, that doesn’t rush or beg to be seen, but settles deep and stays, patient and unshakable, the way gravity holds the earth without ever needing to prove it. when i think of you, i don’t feel urgency or fear or desperation. i feel permanence ( baby that means permanent or like uhh forever.). i feel the quiet certainty of something that knows it will outlive every storm. i feel a devotion so still and rooted that even doubt wouldn’t dare knock. loving you has made me softer where i was once braced(loving you has made me open to things i never was open to before) braver where i once hesitated, and truer to myself in ways i didn’t think were possible. you didn’t change who i am. you revealed her. you gave me permission to exist without protection , to love without calculating the cost, to feel without preparing for loss. and in doing so, you taught me that love is not something that consumes it is more of something that stabilizes.
+          there are moments when i imagine time stretching forward, not in grand scenes or dramatic futures, but in the smallest details: the way i would memorize the sound of your breathing just to know you’re there, the way i would learn your silences as fluently(as well) as your laughter, the way loving you would become a daily language spoken without effort. i imagine a lifetime not as a promise, but as a rhythm . one i would gladly fall into, again and again, until it became indistinguishable ( i cant identify it) from my own heartbeat. you are the kind of person whose presence turns ordinary moments into something memorable, not because they’re extraordinary, but because they’re shared. and i know, with a certainty that doesn’t weaken, that even if the world were to strip everything down to its simplest most naked form, even if all that remained was two people and the truth between them, i would still choose you without hesitation. not because it’s easy. not because it’s safe. but because my soul recognizes yours as something it has always been waiting to stand beside.
+          loving you has taught me that devotion is not loud statements or dramatic sacrifices it is the quiet decision to stay, over and over, even when no one is watching. it is the willingness to hold another person’s existence with care, to protect their weaknesses without dimming their fire. it is understanding that loving someone means loving the seasons they haven’t yet lived through, the versions of them they haven’t yet become. and i love you not only for who you are now, but for who you are growing into, for every future self that will carry traces of who you were when i first loved you. there is no finish line to the way i love you. no point at which it settles or fades or completes itself. it only deepens. it only roots further into me. and if love is measured by how much of yourself you are willing to give without losing who you are, then know this:
+          loving you has made me more myself than i have ever been.
+           Speaking of improvement, I have this one note that I've been wanting to say but idk how. you were the final push for me baby, you gave me that final push. like i have been meaning to be better but i never found the right time. baby ever since you came into my life ive seen nothing but good from you. and I knew that it was real when you pushed me closer towards my religion and not further away from it. I hope you know that you’ve inspired me to just be better baby. I forever owe you for that.
+          you are not the center of my world only because everything else disappears around you. you are the center because everything makes sense with you there. you are the quiet truth my heart returns to when the noise gets too loud, the constant that doesn’t demand attention but asks for it effortlessly. and if there is any legacy i leave behind in this life, let it be that i loved you in a way that was whole, unguarded, and endlessly sincere. that i loved you not as a fleeting chapter, but as a lifelong vow written into the marrow of who i am. that i loved you in a way that did not ask to be remembered, because it was never meant to end.
+          i am yours in the loud ways and the quiet ones and in all the ways that matter and i will be always.
+          and if one day everything else fades my love for you will still remain standing because loving you was never a moment in my life it was the moment my life finally began. the moment my clock started ticking. 
+          and maybe this is where i stop trying to explain love as something dramatic or extraordinary, because what i feel for you is quieter than that and somehow much bigger. it lives in the small certainties. in the way my heart does not question where it belongs anymore. in the way my future stopped feeling like a terrfying concept and started feeling like a place i could rest, simply because you are in it. loving you has taught me that forever is not a promise you make out loud. it is a knowing that settles so deeply into you that it no longer asks to be proven.
+          i no longer imagine a life where you are absent, not because i fear loss, but because my soul has already arranged itself around yours. you are engraved into the way i think, the way i hope, the way i dream forward. when i picture time unfolding, you are not an addition to it. you are the constant (basically the factor thats permanent ).the quiet presence that makes everything else feel survivable. the person i would reach for with all my instincts , not in moments of fear only, but in moments of peace, because even peace feels incomplete without sharing it with you.
+          there is a softness in loving you that has undone me. not the kind that weakens, but the kind that steadies. the kind that teaches patience to a heart that once rushed, and trust to a soul that once guarded itself too tightly. you have become my reference point for what love is meant to feel like. not anxious. not consuming. not uncertain. but grounded super duper grounded. intentional. and safe. loving you feels like standing on solid ground after years of learning how to balance on uncertainty. 
+          i want you to know that i do not love you for the way you love me, though that alone would be enough. i love you for who you are when no one is watching. for the quiet strength you carry. for the gentleness you offer without announcing it. for the way you continue choosing growth even when it would be easier to retreat. i love you for your mind, your heart, your scars, your resilience. i love you for the man you are and for the man you are still becoming, knowing i will cherish every version of you that time brings forward.
+          there is something i need you to understand about yourself when you are with me, something i see so clearly even if you don’t always notice it. your happiness is louder now. not forced. not performative. real. i watch the way your energy shifts, the way your words soften, the way confidence settles into you like it finally found a place it belongs. it’s like color slowly returning to a life that had learned how to survive without it. i love how joy looks on you. i love how you smile more easily. i love how you stand a little taller, how you believe in yourself a little harder, how the spark that once dimmed now burns without apology. i love knowing that my presence has played a part in that. that loving me has made you love yourself more. that being with me has helped you grow stronger not just emotionally, but mentally, physically, wholly. you call it the “girlfriend effect,” but that phrase feels far too small for what it actually is. it doesn’t capture how beautifully you wear happiness now, how naturally it suits you, how it makes you shine in ways i don’t think the world ever gave you space to before. you deserve to feel this happy. always. and knowing that i can be someone who contributes to that, who adds light instead of weight, who brings peace instead of pressure, is something i will never take lightly. you showed me that i could matter this deeply to another person, that my love could change the atmosphere of someone’s life. i didn’t know i was capable of that until you let me be. and i will forever be grateful to you for trusting me with that part of your world.
+
+          if love is meant to be a home, then loving you feels like finally putting my bags down and settling in. like knowing i do not have to be anywhere else to be complete. you are not my escape from life. you are the place i want to stand within it. beside you, not behind you. choosing you, not clinging to you. loving you, not losing myself to you. with you, i have learned that love does not require surrendering who you are. it invites you to become more of it.
+          and this is the final seal. the last quiet truth. the part that doesn’t beg for more because it is more.
+          there is nothing unfinished about the way i love you. nothing extra. nothing waiting to see what happens next. my heart has already decided, long before my mind ever caught up. loving you feels like a vow i didn’t have to speak aloud because it was written into me the moment you became mine. i do not love you hoping. i love you knowing. knowing that even if life changes its shape, even if time stretches and bends us in unfamiliar ways, my love will remain recognizable to you. steady. present. and permanent .
+          if one day words fail me completely, if i lose the ability to explain myself or justify the depth of what i feel, let this be what stays true. i loved you and i still do with my whole being. without hesitation. without keeping parts of myself hidden for safety. i loved you in a way that honored you, protected you, and chose you as you are. not as an idea. not as a fantasy. but as a living, breathing person whose heart I hold with care and respect .
+          you are not the question my life was asking. you are the answer it kept circling back to. the certainty that didn’t need evidence. the love that didn’t need to be loud to be permanent. and if my life were ever reduced to one truth, one thing worth remembering, let it be this. i loved you fully. i loved you honestly. i loved you in a way that made me brave, whole, and finally at home.
+          and i will keep loving you. not just in words like these, but in every quiet choice i make. in every tomorrow i imagine and live through. but baby i mentioned why the future isnt so scary for me anymore, but i never really said why. well, its because it has your face in it. it has us, building something slowly and honestly, chasing our dreams with full hearts. it has marriage that feels too precious to be real, children raised with love and faith, a life shaped by intention instead of fear. I promise you that I will always allow Allah into our relationship, not as a distant idea but as the center of everything we build. I am endlessly thankful for Allah and for the way that he made our paths cross, because my intentions with you are pure and endless. I pray that we never part ways. truly. because losing you would feel like losing the ground beneath me. inshallah we last forever and inshallah you remain the one thing I wish to last in this life. the love i protect. the future i choose. the person i walk toward, hand in hand, no matter where the road leads.
+          and here is something i haven’t said properly yet. my feelings for you have always been bigger than me. my whole life, my emotions have been something i tried to control before they controlled me. when i love, i love loudly. when i care, i care recklessly. when i hurt, it consumes me. my feelings have never been small enough to fit neatly inside my chest. they spill. they overflow. they demand space. but this time, it feels different. this time, my feelings aren’t just bigger than me. they are bigger than my entire world. and that scares me in the most beautiful way. because my world has always revolved around me. my thoughts. my plans. my survival. my independence. my control. i never ever imagined a day where someone would enter my life and quietly rearrange that orbit without force, without pressure, without me even noticing it happening. and then you did. suddenly, my decisions are not just about me. my dreams include you without me forcing them to. my future doesn’t feel like a solo journey anymore. and the craziest part? i don’t feel like i’m losing myself in you. i feel like i’m expanding. you didn’t shrink my world. you made it bigger. and that is something no one has ever done for me before.
+          i used to hate the idea of men. i genuinely did. i hated the immaturity, the ego, the emotional unavailability. i had built this quiet wall in my mind where i told myself that love was cute in theory but disappointing in reality. i convinced myself that i would always be the one giving more, feeling more, caring more. and then you walked in and shattered that belief without even trying. you didn’t argue with my perspective. you proved it wrong. you showed me that a man can be gentle and strong at the same time. that he can be protective without being controlling. that he can be emotionally aware without losing his masculinity. that he can be freaky and affectionate and soft and ambitious and faithful and grounded all at once. you made me excited for things i used to roll my eyes at. like marriage?baby it used to scare me. now it feels sacred SAAACRED nor scary, hmm and building a life? used to feel overwhelming. now it feels like something i would run toward. loving someone HALF as deeply as i love you?it  used to feel dangerous. now it feels like breathing. and the fact that i am writing something this long…for you…(you deserve ut) still shocks me. i would have NEVER done this for anyone else. never. i don’t put this much effort into people. i don’t pour myself out like this. i don’t sit down and dissect my heart and hand it over on paper. but here i am. because you are not “anyone else.”
+           you are the exception to every rule i ever made for myself.
+          and one of the things i love most about us which is something i genuinely thank Allah for is that we can be every version of ourselves with each other. we can be the sweetest people alive. we can be sarcastic and mean in that playful way. we can be dramatic. we can be quiet. we can be ugly. we can be tired. we can be chaotic. we can be overly affectionate. we can be freaky…. REALLY FREAKY. hmm and we can be serious about life and religion and marriage and responsibility. and through all of it we still understand each other. that IS rare. being almost two months in and not having a single serious argument still feels absurd to me. i’m used to conflict.not just in relationships but with everyone too. i’m used to loving someone and also preparing for the next disagreement. but with you there is always calm. even when we tease even when we joke. even when we push boundaries playfully. there is never disrespect. there is never ego. there is never the feeling that we are against each other. it’s always us. youre always my safe space that i run to. im so glad i run to you abojt people and not run to people abojt you 
+          and the distance? yes, it’s there. yes, it’s not so ideal. yes, sometimes i wish i could just reach for you physically instead of through a screen. but somehow, even through distance, you have made me feel closer than anyone ever has. you text me. you check on me. you notice my mood shifts. you stay consistent. distance didn’t weaken us. it allowed us to communicate better. to understand deeper. to build emotionally before physically. and I trust you. not in a naive way. not in a blind way. but in a calm, steady way. people tried to scare me away from you. people tried to plant doubts. and maybe at the beginning, i hesitated for a second. but now? i am not scared of you and i am not scared of loving you nor scared of what we are building. and that absence of fear speaks louder than anything else. because when i love you, i don’t feel like i’m gambling. i feel like i’m choosing something solid.
+          you are my soulmate. not in a dramatic fairytale way ( i think) . but in a deeply rooted, spiritual certain way. if it’s not you, it’s not anyone. and i don’t mean that in the obsessive way, I mean it like in the pure genuine way where I’m sure that you are the one for me and if it’s not you then I don’t think I’m gonna have anybody else i know we joke. i know we get playful. i know we can be overly freaky sometimes and laugh about it five seconds later and then switch to talking about our future kids and responsibilities. but that balance is the ability to be both passionate and principled  that is what makes this sacred. nothing about that side of us takes away from the purity of what we have. if anything, it shows how safe we feel with each other. and i trust you with every inch of me. emotionally. mentally. physically. spiritually. i trust you with my vulnerabilities. with my body. with my fears. with my future. and trust, for me, is not easy. so when i say that, understand the weight of it.
+          i want to grow with you. i want to struggle with you. i want to succeed with you. i want to stand beside you when life is beautiful and when it is hard. i want us to build something that lasts. something that honors Allah. something that is intentional. something that outlives trends and distance and immaturity. i want us to look back one day and say, “we were young and in love, and we meant every word.” if there is ever a day where you don’t feel loved by me, it will not be because i stopped loving you. it will be because i physically no longer exist on this earth. and even then, i will have loved you with everything i had.
+          you are not just someone i love. you are the person who redefined love for me. you made me believe in something i had already dismissed. you made me softer without making me weak. you made me hopeful without making me dependent. you made me excited about life without taking away my independence. and that is powerful. if loving you is the bravest thing i ever do, then i am proud of myself. because this time, my feelings are not controlling me. they are guiding me. and they are guiding me straight to you. and i would walk that path, over and over again, in every lifetime, in every universe, with no hesitation. inshallah, forever is ours.
+          there is something almost overwhelming about loving you this much. sometimes i sit there and just think about you and i genuinely cannot comprehend how one human being can occupy so much of my heart without it feeling heavy. it feels full, but not crowded. intense, but not chaotic. powerful, but not destructive. loving you has not taken pieces from me. it has added dimensions to me. you have seen parts of me no one else has earned the right to see, and instead of mishandling them, you treated them like something fragile and sacred. that alone is enough to make me choose you for the rest of my life.
+          i love that we can be everything and nothing at the same time. we can talk about the most serious topics in the world and five minutes later be laughing over something stupid. we can be soft and then bold. respectful and then playful. spiritual and then passionate. and none of it contradicts who we are. it all fits. it all makes sense. it all belongs to us.
+          sometimes i think about how young we are and how people would probably say we don’t know what forever means yet. but what they don’t understand is that forever is not about age. it’s about certainty. and what i feel for you is not temporary excitement. it is not infatuation. it is not confusion. it is a calm, grounded knowing. the kind that doesn’t need validation from anyone else to exist.
+          you didn’t just become my boyfriend. you became my safe place. my motivation. my proof that Allah writes stories more beautifully than we ever could.
+          and if loving you is the risk, then it is the only risk i would ever take without hesitation.
+          because you are not just part of my world anymore.
+          you are the world i want to build.
+          i could go on forever, adding every little thing i feel about you, every way you’ve changed my life, every joy you’ve brought me but i can’t wait to tell you in person too. i’m trying not to repeat myself, but i want you to know there’s always more, even if i haven’t written it all here yet. some things are too alive to stay on text, and some things i just need you to feel, not read.
+
+          I believe that in every version of myself I will continue to choose you without doubt. because loving you was never something I did.
+          it is who i am, who ive become.
+          till the end mylove 
+        </p>
+      </div>
+    </div>
+
+    <!-- ========== NEW GALLERY SECTION (ADDED, PRESSABLE PICTURES) ========== -->
+    <section class="gallery-section">
+      <h2>📸 our little gallery of memories ✨</h2>
+      <p style="margin-bottom: 20px; font-size: 0.9rem;">tap any picture to read the sweet memory attached 💗</p>
+      <div class="gallery-grid" id="memoryGallery"></div>
+    </section>
+
+    <!-- 60 REASONS TABLE (ORIGINAL, UNTOUCHED) -->
     <section class="section">
-      <h2>Days since we met</h2>
-      <p class="big-number" id="sinceDays">0</p>
-    </section>
-    <div class="right-side">
-    <h2>Our og duo and pic woahhh.</h2>
-    <div class="photo-side">
-        &nbsp;</div>
-
-    <section class="section split">
-  
-  <!-- LEFT: picture -->
-  <div class="photo-side">
-    <img src="IMG_1251.jpeg" alt="usss">
-  </div>
-
-  <!-- RIGHT: milestones -->
-  <div class="text-side">
-    <h2>Our milestones ♡</h2>
-    <ul class="milestones">
-      <li>first time we realized how alike we are — Dec 19, 2025</li>
-      <li>first "i miss you" — Dec 21, 2025</li>
-      <li>first time we called each other baby — Dec 22, 2025</li>
-      <li>first "i love you" — Dec 24, 2025</li>
-	
-    </ul>
-  </div>
-
-</section>
-
-  <!-- LEFT: LETTER / PARAGRAPH -->
-  <div class="text-side">
-    <h2>For You ♡</h2>      
-	  <button class="heart-button" onclick="toggleLove()">
-  ♡ click me ♡
-</button>
-
-<div id="loveParagraph" class="love-hidden">
-    <p class="auto-style2">
-        hi baby, before you start reading this i just want you to know that this is gonna be super duper long cs its my heart poured out into stupid writing because i cant express it to you irl. to begin with, I don’t think I’ll ever be able to explain how you happened to me in a way that makes sense to anyone else, but maybe that’s the point. Some things don’t come into your life logically,they arrive quietly, unexpectedly, and then suddenly they’re everything to you. You didn’t come into my life when I had it all together. You came when I was confused, tired, and carrying things I didn’t talk about, and somehow you made all of it lighter without even trying or knowing what had been happening. Writing this feels impossible because every word I choose feels too small for what you are to me, but if there’s one thing I know for sure, it’s that meeting you changed me in ways I didn’t even know I needed.
- Now, im gonna start with writing the first part of my story.
-so to me, We met because you followed me on Instagram, which still feels unreal to me. You were this like super nonchalant, closed off guy, who barely followed anyone back.
-almost like someone i’d be scared to interact wirh. pinky promise. but somehow, out of everyone, you chose to follow me?? like woahh baby im flattered. anyway You had that little “bmf” note and I replied with the most unserious “hihihihi,” not expecting anything to come from it. i thought yiud leave me on delivered tbh. BUUUUUTTTT you replied wirh, “Did I say smth funny? 😔” and then followed it with, “joking. hi” and yes that was it. woaahhh that was the beginning of everything.
-That first night we talked, we talked for LOOONGGF. I don’t think you understand what an achievement that was. I never stay up for anyone i thought that was stupid cs my sleep is way more important than people. I ghost people without thinking twice. bur some flipping how with you time didn’t exist. the conversation just flowed, and for the first time in so long, my mind wasn’t all over the place . and like at that point in my life, ahmed was on my ass confusing me, my emotions were wheoejidfiejr  and I was exhausted FROM EVERYONE But when you were there, I felt comforted. I forgot about everything else and just focused on you lik more specifically on us talking, and like ir just felt easy and not like a chore.
-2 or 3 days in, I knew I liked you. In a “this feels different and I don’t want it to stop” way. We bonded so hard, and so fast baby its like we’d known each other forever. umm we also had so much in common, the same humor, EMOJI TASTE. the same way of thinking, the same rhythm, we were so aligned it shook me. btw baby I still smile thinking about how I rizzed you up in 4 different languages during our first convo. but baby If love were a language, then you are the only word my heart has ever known how to speak. woaahh. im gigging baby i wouldve never thought that i was talking to my boyfriend like that..let alone RIZZING HIM UP? like hello what the helly i swear this feels like a fever dream.
-anyway my loveee you made me happy in a way I hadn’t felt in a long time. You still do. You’ve made me happier than anyone ever has EVER i mean that. before we met i was kinda giving uo on myself and especially on love. I was messy on the inside idk how but i was stressed, and like not eating properly, nor sleeping properly. and then you spawned into my life, and things started making sense again. I started eating better. sleeping better ( i dont mean that literally cs i sacrificed my sleep for you but i mean that i just startef feeling more comfortable in my sleep) even my body healed in ways I never expected woahh like baby my period became regular again after being messed up for so long.  like baby i swear you dont understand. i used to have 3 periods a month THATS MESSED UP MAN. but babyy thats how deeply you affected me, without forcing it or anything you were just being you.and btw baby i’d choose you in every lifetime and every universe but i’d still somehow call it destiny, For in loving you, I have found a fate sweeter than any destiny I could have ever prayed for.
-anywho baby to wrap this part one up, i just want you to know how fucking much i love you. i dont have vocabulary advanced enough to portray my feelings for you but i hope my actions do the talking for me. i promise you do and continue doing what i do, i will do everything in my power to love you so loud that you wont notice who isn’t.  im very much willing to learn new languages for you but you wont let me BUT I WILL DO IT SOMEDAY. unfortunately i cant keep anything from you especially if its exciting so therefore baby you’ll always be able to see right through me and i genuinely hope that you’ll allow me to do the same for you. i trust and love you so much that it defies the limits people have set for both love and trust. i love you so bad that i feel like i’m in a novel from the 1800’s, except im the man whos deeply yearning for um the love of his life. yes baby. to sum up, you’re the color in my life, the stars to my night skies, the sun to my moon ( get it? cs without you i wouldnt be able to shine) and finally, the love i never knew existed but desperately needed. And so my heart having once known yours, will never again remember how to belong anywhere else.
-loving you didn’t feel like falling. it felt like arriving. like my soul had been holding its breath for years and didn’t even realize it until it finally exhaled around you. what we have hasn’t been rushed, but it also hasn’t been slow. it’s been inevitable. that’s the only word that fits. i didn’t have to convince myself to trust you. i didn’t have to fight my instincts or silence the warning bells in my head. for the first time, my instincts weren’t screaming at me to protect myself. they were whispering quietly that i was safe with you.
-before you, my mind was trained to look for exits. every good thing came with a countdown. every smile hid a question mark. happiness always felt temporary, like it was only there to soften the blow of whatever was coming next. i learned to love defensively, quietly, with one foot already stepping back. but you didn’t let me love you that way. not because you demanded more, but because you gave me more than i ever expected without asking for anything in return.
-you dismantled my fears so gently it scared me at first. you didn’t question my insecurities or grow impatient with my past. you never made me feel dramatic or broken for carrying things i didn’t choose. you just stayed. consistently and calmly. you listened in a way that didn’t feel like waiting for your turn to speak. you reassured me in a way that never felt forced or scripted. and somehow, within days, fears that had lived in me for months went quiet. not because i pushed them away, but because you proved they didn’t belong anymore.
-for the first time in so long, my mind wasn’t busy imagining worst case scenarios. i wasn’t checking for signs or bracing myself. i was just loving you. freely. and loudly. without fear. and you never made me feel like too much for it. you never made me feel stupid for loving you. you never punished me for being honest. instead, you met me there. you held my love like it was something precious, not something heavy.
-the way you love me still leaves me in awe. the way you speak to me, the way you look at me even through words on a screen. i could be doing the most ridiculous or mischievous thing and you look at me like i’m something soft and sacred. like i’m adored. you make me feel beautiful without trying to convince me. you make me feel chosen without ever making me compete. you make me feel wanted in a way that doesn’t demand i become smaller or quieter or easier to keep.
-you see me. not the polished version, not the composed one, not the one pretending to be okay. you see the real me. the emotional one. the dramatic one. the one who loves too hard and feels too deeply and gives too much. and instead of running from that, you lean into it. you cherish it. you make me feel like the very things that once made people leave are the reasons you stay.
-you trusted me with the truth of who you are. more specifically your past. and your fears. the battles you fought when no one was there to help . and i need you to know this like genuinely memorize it like your full name baby. NOTHING about your past makes you seem less to me. not a single part of it. if anything, it makes me admire you more. you were hurt in ways you didn’t deserve and you still chose to heal instead of disappear. you chose to grow. you chose to live. and i am so unbearably proud of you that it genuinely hurts me from how much pride i contain.
-loving you has healed me in ways i didn’t know love could heal. my body feels safer. my mind feels calmer. my heart feels steady. i don’t feel like i’m constantly running anymore. i don’t feel like i have to earn love through pain or prove my worth by suffering. you showed me that love can be soft and still strong. that peace doesn’t mean emptiness. it means presence without fear.
-and if i have healed you even a fraction of how you’ve healed me, then i know i’ve done something right in this life.
-i need you to understand this even if you forget everything else i’ve ever said. you are lovable. not despite who you are. not only on your best days. you are lovable entirely. in your past. in your future. your present . in your strength and weakness. in your worst moments and your quiet ones. you ARE worth loving so deeply and genuinely that people run away from it cs of how much you deserve. if anyone ever made you feel like you were too much, the truth is you never were. they just weren’t enough .
-i don’t love you conditionally. i don’t love you cautiously. i love you deliberately ( that means carefully mylove) i love you in a way that chooses you over fear, over doubt, over distance, over time. no over speed HA! ( get it baby cs 
-speed= distance over time..?) okay but anyway i love you in a way that doesn’t flinch at forever. i love you knowing every risk and taking it anyway, because a life without you, would never feel complete.
-if the world ever makes you doubt yourself, i will be your reminder. if you ever feel unworthy, i will be your proof. if you ever forget how unique you are, i will love you loudly enough that you remember. i will choose you on easy days and on hard ones. i will choose you when you are confident and when you are unsure. i will choose you even when you don’t know how to choose yourself.
-you are not a phase to me. you are not a chapter i will outgrow. you are  forever. you are the place my heart returns to when everything else is off. you are the future i see without forcing myself to imagine it. you are the person i would give up comfort, certainty, and familiarity for just to live beside.
-if i had to explain my love for you to the universe, i don’t think language would survive it. what i feel for you lives beyond words. it lives in instinct. in devotion. in the quiet certainty that no matter where life takes me, my heart would still recognize yours. i would find you in every lifetime. i would choose you in every version of myself. i would love you even if it cost me everything, because loving you has already given me more than i ever thought i deserved.
-so if you ever sit there wondering how someone could love you this much, let me answer you now; its because you are worth every second, every tear, every risk, every word i have ever written and every word i will never be able to say. all of this still does not come close to the love i carry for you. but it is my attempt. my offering to you . my forever promise.
-there is something sacred about the way loving you has rearranged the architecture of my soul, like rooms i didn’t know existed suddenly opening up and filling with light, like silence learning how to sing. loving you has made me understand that some connections are not built, they are remembered. as if my heart had always been walking toward you long before my body ever knew your name. you feel like the kind of love that doesn’t announce itself, that doesn’t rush or beg to be seen, but settles deep and stays, patient and unshakable, the way gravity holds the earth without ever needing to prove it. when i think of you, i don’t feel urgency or fear or desperation. i feel permanence ( baby that means permanent or like uhh forever.). i feel the quiet certainty of something that knows it will outlive every storm. i feel a devotion so still and rooted that even doubt wouldn’t dare knock. loving you has made me softer where i was once braced(loving you has made me open to things i never was open to before) braver where i once hesitated, and truer to myself in ways i didn’t think were possible. you didn’t change who i am. you revealed her. you gave me permission to exist without protection , to love without calculating the cost, to feel without preparing for loss. and in doing so, you taught me that love is not something that consumes it is more of something that stabilizes.
-there are moments when i imagine time stretching forward, not in grand scenes or dramatic futures, but in the smallest details: the way i would memorize the sound of your breathing just to know you’re there, the way i would learn your silences as fluently(as well) as your laughter, the way loving you would become a daily language spoken without effort. i imagine a lifetime not as a promise, but as a rhythm . one i would gladly fall into, again and again, until it became indistinguishable ( i cant identify it) from my own heartbeat. you are the kind of person whose presence turns ordinary moments into something memorable, not because they’re extraordinary, but because they’re shared. and i know, with a certainty that doesn’t weaken, that even if the world were to strip everything down to its simplest most naked form, even if all that remained was two people and the truth between them, i would still choose you without hesitation. not because it’s easy. not because it’s safe. but because my soul recognizes yours as something it has always been waiting to stand beside.
-loving you has taught me that devotion is not loud statements or dramatic sacrifices it is the quiet decision to stay, over and over, even when no one is watching. it is the willingness to hold another person’s existence with care, to protect their weaknesses without dimming their fire. it is understanding that loving someone means loving the seasons they haven’t yet lived through, the versions of them they haven’t yet become. and i love you not only for who you are now, but for who you are growing into, for every future self that will carry traces of who you were when i first loved you. there is no finish line to the way i love you. no point at which it settles or fades or completes itself. it only deepens. it only roots further into me. and if love is measured by how much of yourself you are willing to give without losing who you are, then know this:
-loving you has made me more myself than i have ever been.
- Speaking of improvement, I have this one note that I've been wanting to say but idk how. you were the final push for me baby, you gave me that final push. like i have been meaning to be better but i never found the right time. baby ever since you came into my life ive seen nothing but good from you. and I knew that it was real when you pushed me closer towards my religion and not further away from it. I hope you know that you’ve inspired me to just be better baby. I forever owe you for that.
-you are not the center of my world only because everything else disappears around you. you are the center because everything makes sense with you there. you are the quiet truth my heart returns to when the noise gets too loud, the constant that doesn’t demand attention but asks for it effortlessly. and if there is any legacy i leave behind in this life, let it be that i loved you in a way that was whole, unguarded, and endlessly sincere. that i loved you not as a fleeting chapter, but as a lifelong vow written into the marrow of who i am. that i loved you in a way that did not ask to be remembered, because it was never meant to end.
-i am yours in the loud ways and the quiet ones and in all the ways that matter and i will be always.
-and if one day everything else fades my love for you will still remain standing because loving you was never a moment in my life it was the moment my life finally began. the moment my clock started ticking. 
-and maybe this is where i stop trying to explain love as something dramatic or extraordinary, because what i feel for you is quieter than that and somehow much bigger. it lives in the small certainties. in the way my heart does not question where it belongs anymore. in the way my future stopped feeling like a terrfying concept and started feeling like a place i could rest, simply because you are in it. loving you has taught me that forever is not a promise you make out loud. it is a knowing that settles so deeply into you that it no longer asks to be proven.
-i no longer imagine a life where you are absent, not because i fear loss, but because my soul has already arranged itself around yours. you are engraved into the way i think, the way i hope, the way i dream forward. when i picture time unfolding, you are not an addition to it. you are the constant (basically the factor thats permanent ).the quiet presence that makes everything else feel survivable. the person i would reach for with all my instincts , not in moments of fear only, but in moments of peace, because even peace feels incomplete without sharing it with you.
-there is a softness in loving you that has undone me. not the kind that weakens, but the kind that steadies. the kind that teaches patience to a heart that once rushed, and trust to a soul that once guarded itself too tightly. you have become my reference point for what love is meant to feel like. not anxious. not consuming. not uncertain. but grounded super duper grounded. intentional. and safe. loving you feels like standing on solid ground after years of learning how to balance on uncertainty. 
-i want you to know that i do not love you for the way you love me, though that alone would be enough. i love you for who you are when no one is watching. for the quiet strength you carry. for the gentleness you offer without announcing it. for the way you continue choosing growth even when it would be easier to retreat. i love you for your mind, your heart, your scars, your resilience. i love you for the man you are and for the man you are still becoming, knowing i will cherish every version of you that time brings forward.
-there is something i need you to understand about yourself when you are with me, something i see so clearly even if you don’t always notice it. your happiness is louder now. not forced. not performative. real. i watch the way your energy shifts, the way your words soften, the way confidence settles into you like it finally found a place it belongs. it’s like color slowly returning to a life that had learned how to survive without it. i love how joy looks on you. i love how you smile more easily. i love how you stand a little taller, how you believe in yourself a little harder, how the spark that once dimmed now burns without apology. i love knowing that my presence has played a part in that. that loving me has made you love yourself more. that being with me has helped you grow stronger not just emotionally, but mentally, physically, wholly. you call it the “girlfriend effect,” but that phrase feels far too small for what it actually is. it doesn’t capture how beautifully you wear happiness now, how naturally it suits you, how it makes you shine in ways i don’t think the world ever gave you space to before. you deserve to feel this happy. always. and knowing that i can be someone who contributes to that, who adds light instead of weight, who brings peace instead of pressure, is something i will never take lightly. you showed me that i could matter this deeply to another person, that my love could change the atmosphere of someone’s life. i didn’t know i was capable of that until you let me be. and i will forever be grateful to you for trusting me with that part of your world.
-
-if love is meant to be a home, then loving you feels like finally putting my bags down and settling in. like knowing i do not have to be anywhere else to be complete. you are not my escape from life. you are the place i want to stand within it. beside you, not behind you. choosing you, not clinging to you. loving you, not losing myself to you. with you, i have learned that love does not require surrendering who you are. it invites you to become more of it.
-and this is the final seal. the last quiet truth. the part that doesn’t beg for more because it is more.
-there is nothing unfinished about the way i love you. nothing extra. nothing waiting to see what happens next. my heart has already decided, long before my mind ever caught up. loving you feels like a vow i didn’t have to speak aloud because it was written into me the moment you became mine. i do not love you hoping. i love you knowing. knowing that even if life changes its shape, even if time stretches and bends us in unfamiliar ways, my love will remain recognizable to you. steady. present. and permanent .
-if one day words fail me completely, if i lose the ability to explain myself or justify the depth of what i feel, let this be what stays true. i loved you and i still do with my whole being. without hesitation. without keeping parts of myself hidden for safety. i loved you in a way that honored you, protected you, and chose you as you are. not as an idea. not as a fantasy. but as a living, breathing person whose heart I hold with care and respect .
-you are not the question my life was asking. you are the answer it kept circling back to. the certainty that didn’t need evidence. the love that didn’t need to be loud to be permanent. and if my life were ever reduced to one truth, one thing worth remembering, let it be this. i loved you fully. i loved you honestly. i loved you in a way that made me brave, whole, and finally at home.
-and i will keep loving you. not just in words like these, but in every quiet choice i make. in every tomorrow i imagine and live through. but baby i mentioned why the future isnt so scary for me anymore, but i never really said why. well, its because it has your face in it. it has us, building something slowly and honestly, chasing our dreams with full hearts. it has marriage that feels too precious to be real, children raised with love and faith, a life shaped by intention instead of fear. I promise you that I will always allow Allah into our relationship, not as a distant idea but as the center of everything we build. I am endlessly thankful for Allah and for the way that he made our paths cross, because my intentions with you are pure and endless. I pray that we never part ways. truly. because losing you would feel like losing the ground beneath me. inshallah we last forever and inshallah you remain the one thing I wish to last in this life. the love i protect. the future i choose. the person i walk toward, hand in hand, no matter where the road leads.
-and here is something i haven’t said properly yet. my feelings for you have always been bigger than me. my whole life, my emotions have been something i tried to control before they controlled me. when i love, i love loudly. when i care, i care recklessly. when i hurt, it consumes me. my feelings have never been small enough to fit neatly inside my chest. they spill. they overflow. they demand space. but this time, it feels different. this time, my feelings aren’t just bigger than me. they are bigger than my entire world. and that scares me in the most beautiful way. because my world has always revolved around me. my thoughts. my plans. my survival. my independence. my control. i never ever imagined a day where someone would enter my life and quietly rearrange that orbit without force, without pressure, without me even noticing it happening. and then you did. suddenly, my decisions are not just about me. my dreams include you without me forcing them to. my future doesn’t feel like a solo journey anymore. and the craziest part? i don’t feel like i’m losing myself in you. i feel like i’m expanding. you didn’t shrink my world. you made it bigger. and that is something no one has ever done for me before.
-i used to hate the idea of men. i genuinely did. i hated the immaturity, the ego, the emotional unavailability. i had built this quiet wall in my mind where i told myself that love was cute in theory but disappointing in reality. i convinced myself that i would always be the one giving more, feeling more, caring more. and then you walked in and shattered that belief without even trying. you didn’t argue with my perspective. you proved it wrong. you showed me that a man can be gentle and strong at the same time. that he can be protective without being controlling. that he can be emotionally aware without losing his masculinity. that he can be freaky and affectionate and soft and ambitious and faithful and grounded all at once. you made me excited for things i used to roll my eyes at. like marriage?baby it used to scare me. now it feels sacred SAAACRED nor scary, hmm and building a life? used to feel overwhelming. now it feels like something i would run toward. loving someone HALF as deeply as i love you?it  used to feel dangerous. now it feels like breathing. and the fact that i am writing something this long…for you…(you deserve ut) still shocks me. i would have NEVER done this for anyone else. never. i don’t put this much effort into people. i don’t pour myself out like this. i don’t sit down and dissect my heart and hand it over on paper. but here i am. because you are not “anyone else.”
- you are the exception to every rule i ever made for myself.
-and one of the things i love most about us which is something i genuinely thank Allah for is that we can be every version of ourselves with each other. we can be the sweetest people alive. we can be sarcastic and mean in that playful way. we can be dramatic. we can be quiet. we can be ugly. we can be tired. we can be chaotic. we can be overly affectionate. we can be freaky…. REALLY FREAKY. hmm and we can be serious about life and religion and marriage and responsibility. and through all of it we still understand each other. that IS rare. being almost two months in and not having a single serious argument still feels absurd to me. i’m used to conflict.not just in relationships but with everyone too. i’m used to loving someone and also preparing for the next disagreement. but with you there is always calm. even when we tease even when we joke. even when we push boundaries playfully. there is never disrespect. there is never ego. there is never the feeling that we are against each other. it’s always us. youre always my safe space that i run to. im so glad i run to you abojt people and not run to people abojt you 
-and the distance? yes, it’s there. yes, it’s not so ideal. yes, sometimes i wish i could just reach for you physically instead of through a screen. but somehow, even through distance, you have made me feel closer than anyone ever has. you text me. you check on me. you notice my mood shifts. you stay consistent. distance didn’t weaken us. it allowed us to communicate better. to understand deeper. to build emotionally before physically. and I trust you. not in a naive way. not in a blind way. but in a calm, steady way. people tried to scare me away from you. people tried to plant doubts. and maybe at the beginning, i hesitated for a second. but now? i am not scared of you and i am not scared of loving you nor scared of what we are building. and that absence of fear speaks louder than anything else. because when i love you, i don’t feel like i’m gambling. i feel like i’m choosing something solid.
-you are my soulmate. not in a dramatic fairytale way ( i think) . but in a deeply rooted, spiritual certain way. if it’s not you, it’s not anyone. and i don’t mean that in the obsessive way, I mean it like in the pure genuine way where I’m sure that you are the one for me and if it’s not you then I don’t think I’m gonna have anybody else i know we joke. i know we get playful. i know we can be overly freaky sometimes and laugh about it five seconds later and then switch to talking about our future kids and responsibilities. but that balance is the ability to be both passionate and principled  that is what makes this sacred. nothing about that side of us takes away from the purity of what we have. if anything, it shows how safe we feel with each other. and i trust you with every inch of me. emotionally. mentally. physically. spiritually. i trust you with my vulnerabilities. with my body. with my fears. with my future. and trust, for me, is not easy. so when i say that, understand the weight of it.
-i want to grow with you. i want to struggle with you. i want to succeed with you. i want to stand beside you when life is beautiful and when it is hard. i want us to build something that lasts. something that honors Allah. something that is intentional. something that outlives trends and distance and immaturity. i want us to look back one day and say, “we were young and in love, and we meant every word.” if there is ever a day where you don’t feel loved by me, it will not be because i stopped loving you. it will be because i physically no longer exist on this earth. and even then, i will have loved you with everything i had.
-you are not just someone i love. you are the person who redefined love for me. you made me believe in something i had already dismissed. you made me softer without making me weak. you made me hopeful without making me dependent. you made me excited about life without taking away my independence. and that is powerful. if loving you is the bravest thing i ever do, then i am proud of myself. because this time, my feelings are not controlling me. they are guiding me. and they are guiding me straight to you. and i would walk that path, over and over again, in every lifetime, in every universe, with no hesitation. inshallah, forever is ours.
-there is something almost overwhelming about loving you this much. sometimes i sit there and just think about you and i genuinely cannot comprehend how one human being can occupy so much of my heart without it feeling heavy. it feels full, but not crowded. intense, but not chaotic. powerful, but not destructive. loving you has not taken pieces from me. it has added dimensions to me. you have seen parts of me no one else has earned the right to see, and instead of mishandling them, you treated them like something fragile and sacred. that alone is enough to make me choose you for the rest of my life.
-i love that we can be everything and nothing at the same time. we can talk about the most serious topics in the world and five minutes later be laughing over something stupid. we can be soft and then bold. respectful and then playful. spiritual and then passionate. and none of it contradicts who we are. it all fits. it all makes sense. it all belongs to us.
-sometimes i think about how young we are and how people would probably say we don’t know what forever means yet. but what they don’t understand is that forever is not about age. it’s about certainty. and what i feel for you is not temporary excitement. it is not infatuation. it is not confusion. it is a calm, grounded knowing. the kind that doesn’t need validation from anyone else to exist.
-you didn’t just become my boyfriend. you became my safe place. my motivation. my proof that Allah writes stories more beautifully than we ever could.
-and if loving you is the risk, then it is the only risk i would ever take without hesitation.
-because you are not just part of my world anymore.
-you are the world i want to build.
-i could go on forever, adding every little thing i feel about you, every way you’ve changed my life, every joy you’ve brought me but i can’t wait to tell you in person too. i’m trying not to repeat myself, but i want you to know there’s always more, even if i haven’t written it all here yet. some things are too alive to stay on text, and some things i just need you to feel, not read.
-
-I believe that in every version of myself I will continue to choose you without doubt. because loving you was never something I did.
-it is who i am, who ive become.
-till the end mylove 
-
-	</p>
-</div>
-     <section class="section">
       <h2 class="auto-style3">60 reasons why YOU'RE the best boyfriend ♡</h2>
-         	<table style="width: 100%" class="auto-style1">
-    	<tr>
-            <td style="width: 81px; height: 39px;" class="auto-style9">Reason #</td>
-            <td style="height: 39px" class="auto-style4">what you do</td>
-          </tr>
-
-			<tr>
-				<td style="width: 81px" class="auto-style5">1</td>
-				<td class="auto-style7">you make me laugh even when i dont want to</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">2</td>
-				<td class="auto-style7">you remember the teeniest tiniest details abt me</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">3</td>
-				<td class="auto-style7">you always listen to me no matter the time</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">4</td>
-				<td class="auto-style7">youre super duper patient with me</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">5</td>
-				<td class="auto-style7">youre trustworthy and you dont go behind my back</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">6</td>
-				<td class="auto-style7">&nbsp;you respect my boundaries and always make sure to 
-				consent even if its silly.</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">7</td>
-				<td class="auto-style7">you remember important dates</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">8</td>
-				<td class="auto-style7">youre willing to compromise</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">9</td>
-				<td class="auto-style7">youre suuuuper thoughtful even in the smallest wayss</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">10</td>
-				<td class="auto-style7">you can be both serious and unserious when needed</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">11</td>
-				<td class="auto-style7">you always believe in me</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">12</td>
-				<td class="auto-style7">you sacrafice alot of things for me without complaining 
-				about it </td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">13</td>
-				<td class="auto-style7">you surprise me with genuine gestures</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">14</td>
-				<td class="auto-style7">youre loyal and wouldnt even allow&nbsp; me to think the 
-				opposite</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">15</td>
-				<td class="auto-style7">you never rush me into anything</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">16</td>
-				<td class="auto-style7">you dont shadow me in the relationship 
-				and you allow me to shine</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">17</td>
-				<td class="auto-style7">you listen to understand and not just 
-				respond</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">18</td>
-				<td class="auto-style7">you love me in a way that doesnt compete 
-				with any love ive ever recieved </td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">19</td>
-				<td class="auto-style7">you sense when i need anything without 
-				me having to tell you</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">20</td>
-				<td class="auto-style7">you never make me feel like a burden</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">21</td>
-				<td class="auto-style7">you take my trust seriously and actually 
-				try to earn it</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">22</td>
-				<td class="auto-style7">you make me feel certain that we wont 
-				outgrow eachother</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">23</td>
-				<td class="auto-style7">you put in effort without needing to be 
-				praised for it</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">24</td>
-				<td class="auto-style7">you treat me gently even when youre 
-				joking or mad</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">25</td>
-				<td class="auto-style7">you make everything matter even if its 
-				not worthy</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">26</td>
-				<td class="auto-style7">you make love feel calm and not 
-				something bittersweet</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">27</td>
-				<td class="auto-style7">you make me feel chosen not just wanted</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">28</td>
-				<td class="auto-style7">you dont disappear when things get hard 
-				or serious</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">29</td>
-				<td class="auto-style7">you ARE a man of your word. never have 
-				you ever let me down</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">30</td>
-				<td class="auto-style7">you allow me say whatever i want without being weird about it (dih me down baby)
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">31</td>
-				<td class="auto-style7">you treat me with special treatment like 
-				its the bare minimum</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">32</td>
-				<td class="auto-style7">you never make me feel guilty for any 
-				situation</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">33</td>
-				<td class="auto-style7">you always understand me even when i randomly get too freaky. (you really turn me on baby)</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">34</td>
-				<td class="auto-style7">you make talking about the future feel 
-				exciting and not scary</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">35</td>
-				<td class="auto-style7">you dont negatively compare me with 
-				anyone else</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">36</td>
-				<td class="auto-style7">you show love in multiple ways not just 
-				words</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">37</td>
-				<td class="auto-style7">you care about loving me more than your 
-				ego</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">38</td>
-				<td class="auto-style7">you dont pressure me to be anything or 
-				anyone but myself</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">39</td>
-				<td class="auto-style7">you make room for my emotions instead of 
-				shaking them off</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">40</td>
-				<td class="auto-style7">you never treat my softness like 
-				weakness</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">41</td>
-				<td class="auto-style7">you stay respectful even when ur upset</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">42</td>
-				<td class="auto-style7">you embrace my wants and needs without 
-				trying to change anything about them</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">43</td>
-				<td class="auto-style7">you protect my peace instead of 
-				disturbing it </td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">44</td>
-				<td class="auto-style7">you dont make love feel like a 
-				performance</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">45</td>
-				<td class="auto-style7">you see me as a person not as a label or 
-				a role</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">46</td>
-				<td class="auto-style7">you dont make me question my worth even 
-				on bad days</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">47</td>
-				<td class="auto-style7">you love me intentionally and 
-				unconditionally</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">48</td>
-				<td class="auto-style7">you never had to make me beg for effort 
-				or reassurance</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">49</td>
-				<td class="auto-style7">you never made me feel like i had to 
-				choose between love and self respect</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">50</td>
-				<td class="auto-style7">you allow me to lead in the relationship 
-				but not make me the sourrce of dependency</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">51</td>
-				<td class="auto-style7">you bring softness into my life without 
-				taking my strength as a person away</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">52</td>
-				<td class="auto-style7">you dont make love feel limiting</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">53</td>
-				<td class="auto-style7">you make me feel like loving you doesnt 
-				have any rules or conditions, i can do it freely</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">54</td>
-				<td class="auto-style7">you take care of me and my feelings even 
-				when you dont benefit from it most of the time</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">55</td>
-				<td class="auto-style7">you make consistency feel romantic and 
-				cute but never boring.</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">56</td>
-				<td class="auto-style7">you love me in away that allows me to 
-				breathe</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">57</td>
-				<td class="auto-style7">you never act toxic towards me. no 
-				matter what</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">58</td>
-				<td class="auto-style7">you never make me feel like im trying to 
-				prve that youre worthy of the love because everyone knows you 
-				are.</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style5">59</td>
-				<td class="auto-style7">you love me so much that you heal parts 
-				of me that you didnt break</td>
-			</tr>
-			<tr>
-				<td style="width: 81px" class="auto-style6">60!!</td>
-				<td class="auto-style8">youre different because loving you feels 
-				natural, like im finally home ♡</td>
-			</tr>
-		</table>
+      <table style="width: 100%" class="auto-style1">
+        <tr>
+          <td style="width: 81px; height: 39px;" class="auto-style9">Reason #</td>
+          <td style="height: 39px" class="auto-style4">what you do</td>
+        </tr>
+        <tr><td class="auto-style5">1</td><td class="auto-style7">you make me laugh even when i dont want to</td></tr>
+        <tr><td class="auto-style5">2</td><td class="auto-style7">you remember the teeniest tiniest details abt me</td></tr>
+        <tr><td class="auto-style5">3</td><td class="auto-style7">you always listen to me no matter the time</td></tr>
+        <tr><td class="auto-style5">4</td><td class="auto-style7">youre super duper patient with me</td></tr>
+        <tr><td class="auto-style5">5</td><td class="auto-style7">youre trustworthy and you dont go behind my back</td></tr>
+        <tr><td class="auto-style5">6</td><td class="auto-style7">&nbsp;you respect my boundaries and always make sure to consent even if its silly.</td></tr>
+        <tr><td class="auto-style5">7</td><td class="auto-style7">you remember important dates</td></tr>
+        <tr><td class="auto-style5">8</td><td class="auto-style7">youre willing to compromise</td></tr>
+        <tr><td class="auto-style5">9</td><td class="auto-style7">youre suuuuper thoughtful even in the smallest wayss</td></tr>
+        <tr><td class="auto-style5">10</td><td class="auto-style7">you can be both serious and unserious when needed</td></tr>
+        <tr><td class="auto-style5">11</td><td class="auto-style7">you always believe in me</td></tr>
+        <tr><td class="auto-style5">12</td><td class="auto-style7">you sacrafice alot of things for me without complaining about it</td></tr>
+        <tr><td class="auto-style5">13</td><td class="auto-style7">you surprise me with genuine gestures</td></tr>
+        <tr><td class="auto-style5">14</td><td class="auto-style7">youre loyal and wouldnt even allow&nbsp; me to think the opposite</td></tr>
+        <tr><td class="auto-style5">15</td><td class="auto-style7">you never rush me into anything</td></tr>
+        <tr><td class="auto-style5">16</td><td class="auto-style7">you dont shadow me in the relationship and you allow me to shine</td></tr>
+        <tr><td class="auto-style5">17</td><td class="auto-style7">you listen to understand and not just respond</td></tr>
+        <tr><td class="auto-style5">18</td><td class="auto-style7">you love me in a way that doesnt compete with any love ive ever recieved</td></tr>
+        <tr><td class="auto-style5">19</td><td class="auto-style7">you sense when i need anything without me having to tell you</td></tr>
+        <tr><td class="auto-style5">20</td><td class="auto-style7">you never make me feel like a burden</td></tr>
+        <tr><td class="auto-style5">21</td><td class="auto-style7">you take my trust seriously and actually try to earn it</td></tr>
+        <tr><td class="auto-style5">22</td><td class="auto-style7">you make me feel certain that we wont outgrow eachother</td></tr>
+        <tr><td class="auto-style5">23</td><td class="auto-style7">you put in effort without needing to be praised for it</td></tr>
+        <tr><td class="auto-style5">24</td><td class="auto-style7">you treat me gently even when youre joking or mad</td></tr>
+        <tr><td class="auto-style5">25</td><td class="auto-style7">you make everything matter even if its not worthy</td></tr>
+        <tr><td class="auto-style5">26</td><td class="auto-style7">you make love feel calm and not something bittersweet</td></tr>
+        <tr><td class="auto-style5">27</td><td class="auto-style7">you make me feel chosen not just wanted</td></tr>
+        <tr><td class="auto-style5">28</td><td class="auto-style7">you dont disappear when things get hard or serious</td></tr>
+        <tr><td class="auto-style5">29</td><td class="auto-style7">you ARE a man of your word. never have you ever let me down</td></tr>
+        <tr><td class="auto-style5">30</td><td class="auto-style7">you allow me say whatever i want without being weird about it (dih me down baby)</td></tr>
+        <tr><td class="auto-style5">31</td><td class="auto-style7">you treat me with special treatment like its the bare minimum</td></tr>
+        <tr><td class="auto-style5">32</td><td class="auto-style7">you never make me feel guilty for any situation</td></tr>
+        <tr><td class="auto-style5">33</td><td class="auto-style7">you always understand me even when i randomly get too freaky. (you really turn me on baby)</td></tr>
+        <tr><td class="auto-style5">34</td><td class="auto-style7">you make talking about the future feel exciting and not scary</td></tr>
+        <tr><td class="auto-style5">35</td><td class="auto-style7">you dont negatively compare me with anyone else</td></tr>
+        <tr><td class="auto-style5">36</td><td class="auto-style7">you show love in multiple ways not just words</td></tr>
+        <tr><td class="auto-style5">37</td><td class="auto-style7">you care about loving me more than your ego</td></tr>
+        <tr><td class="auto-style5">38</td><td class="auto-style7">you dont pressure me to be anything or anyone but myself</td></tr>
+        <tr><td class="auto-style5">39</td><td class="auto-style7">you make room for my emotions instead of shaking them off</td></tr>
+        <tr><td class="auto-style5">40</td><td class="auto-style7">you never treat my softness like weakness</td></tr>
+        <tr><td class="auto-style5">41</td><td class="auto-style7">you stay respectful even when ur upset</td></tr>
+        <tr><td class="auto-style5">42</td><td class="auto-style7">you embrace my wants and needs without trying to change anything about them</td></tr>
+        <tr><td class="auto-style5">43</td><td class="auto-style7">you protect my peace instead of disturbing it</td></tr>
+        <tr><td class="auto-style5">44</td><td class="auto-style7">you dont make love feel like a performance</td></tr>
+        <tr><td class="auto-style5">45</td><td class="auto-style7">you see me as a person not as a label or a role</td></tr>
+        <tr><td class="auto-style5">46</td><td class="auto-style7">you dont make me question my worth even on bad days</td></tr>
+        <tr><td class="auto-style5">47</td><td class="auto-style7">you love me intentionally and unconditionally</td></tr>
+        <tr><td class="auto-style5">48</td><td class="auto-style7">you never had to make me beg for effort or reassurance</td></tr>
+        <tr><td class="auto-style5">49</td><td class="auto-style7">you never made me feel like i had to choose between love and self respect</td></tr>
+        <tr><td class="auto-style5">50</td><td class="auto-style7">you allow me to lead in the relationship but not make me the sourrce of dependency</td></tr>
+        <tr><td class="auto-style5">51</td><td class="auto-style7">you bring softness into my life without taking my strength as a person away</td></tr>
+        <tr><td class="auto-style5">52</td><td class="auto-style7">you dont make love feel limiting</td></tr>
+        <tr><td class="auto-style5">53</td><td class="auto-style7">you make me feel like loving you doesnt have any rules or conditions, i can do it freely</td></tr>
+        <tr><td class="auto-style5">54</td><td class="auto-style7">you take care of me and my feelings even when you dont benefit from it most of the time</td></tr>
+        <tr><td class="auto-style5">55</td><td class="auto-style7">you make consistency feel romantic and cute but never boring.</td></tr>
+        <tr><td class="auto-style5">56</td><td class="auto-style7">you love me in away that allows me to breathe</td></tr>
+        <tr><td class="auto-style5">57</td><td class="auto-style7">you never act toxic towards me. no matter what</td></tr>
+        <tr><td class="auto-style5">58</td><td class="auto-style7">you never make me feel like im trying to prve that youre worthy of the love because everyone knows you are.</td></tr>
+        <tr><td class="auto-style5">59</td><td class="auto-style7">you love me so much that you heal parts of me that you didnt break</td></tr>
+        <tr><td class="auto-style6">60!!</td><td class="auto-style8">youre different because loving you feels natural, like im finally home ♡</td></tr>
+      </table>
     </section>
+  </div>
 
-<main> 
-    <!-- SECRET -->
-    <button class="secret" onclick="reveal()">click heree</button>
-    <p id="secretText" class="hidden">
-      I don’t know how you fit into my life so naturally, like the missing piece to my incomplete puzzle.
-      I never want to imagine it without you. to many more months babyyy i love you ♡
-    </p>
+  <!-- SECRET BUTTON (ORIGINAL) -->
+  <button class="secret" onclick="reveal()">click heree</button>
+  <p id="secretText" class="hidden">
+    I don’t know how you fit into my life so naturally, like the missing piece to my incomplete puzzle.
+    I never want to imagine it without you. to many more months babyyy i love you ♡
+  </p>
+</main>
 
-  </main>
-
-
-  <!-- JAVASCRIPT -->
-  <script>
-    /* ====== CONFETTI ON LOAD ====== */
-    window.onload = () => {
-      for (let i = 0; i < 80; i++) {
-        const c = document.createElement("div");
-        c.style.position = "fixed";
-        c.style.width = "6px";
-        c.style.height = "6px";
-        c.style.background = "#ffd6e8";
-        c.style.left = Math.random() * 100 + "vw";
-        c.style.top = "-10px";
-        c.style.opacity = Math.random();
-        c.style.animation = `fall ${2 + Math.random()*3}s linear`;
-        document.body.appendChild(c);
-        setTimeout(() => c.remove(), 4000);
-      }
-    };
-
-    /* ====== HEART GENERATOR ====== */
-    const heartsContainer = document.querySelector('.hearts');
-    for (let i = 0; i < 30; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerText = '♡';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.top = Math.random() * 100 + 'vh';
-      heart.style.fontSize = (10 + Math.random() * 30) + 'px';
-      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
-      heartsContainer.appendChild(heart);
-    }
-
-    /* ====== COUNTDOWN LOGIC ====== */
-    const startDate = new Date("2025-12-18T20:50:00");
-    const targetDate = new Date("2027-01-01T00:00:00");
-
-    function updateCountdown() {
-      const now = new Date();
-      let diff = targetDate - now;
-      if (diff < 0) diff = 0;
-
-      const totalDays = Math.floor(diff / (1000*60*60*24));
-      document.getElementById("months").innerText = Math.floor(totalDays / 30);
-      document.getElementById("days").innerText = totalDays % 30;
-      document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
-      document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
-      document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("sinceDays").innerText =
-        Math.floor((now - startDate) / (1000*60*60*24));
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    /* ====== SECRET BUTTON ====== */
-    function reveal() {
-      document.getElementById("secretText").style.display = "block";
-    }
-  </script>
-	
 <script>
-function toggleLove() {
-  const paragraph = document.getElementById("loveParagraph");
+  /* ====== COUNTDOWN LOGIC ====== */
+  const startDate = new Date("2025-12-18T20:50:00");
+  const targetDate = new Date("2027-01-01T00:00:00");
 
-  if (paragraph.style.height && paragraph.style.height !== "0px") {
-    paragraph.style.height = "0px";
-    paragraph.style.opacity = "0";
-  } else {
-    paragraph.style.height = paragraph.scrollHeight + "px";
-    paragraph.style.opacity = "1";
+  function updateCountdown() {
+    const now = new Date();
+    let diff = targetDate - now;
+    if (diff < 0) diff = 0;
+    const totalDays = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("months").innerText = Math.floor(totalDays / 30);
+    document.getElementById("days").innerText = totalDays % 30;
+    document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
+    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+    document.getElementById("sinceDays").innerText = Math.floor((now - startDate) / (1000*60*60*24));
   }
-}
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  /* ====== SECRET BUTTON ====== */
+  function reveal() {
+    document.getElementById("secretText").style.display = "block";
+  }
+
+  /* ====== LOVE LETTER TOGGLE ====== */
+  function toggleLove() {
+    const para = document.getElementById("loveParagraph");
+    if (para.classList.contains("show")) {
+      para.classList.remove("show");
+      para.style.height = "0px";
+      para.style.opacity = "0";
+    } else {
+      para.classList.add("show");
+      para.style.height = para.scrollHeight + "px";
+      para.style.opacity = "1";
+    }
+  }
+
+  /* ====== HEARTS BACKGROUND ====== */
+  const heartsContainer = document.querySelector('.hearts');
+  for (let i = 0; i < 35; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '♡';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = Math.random() * 100 + 'vh';
+    heart.style.fontSize = (10 + Math.random() * 28) + 'px';
+    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+    heartsContainer.appendChild(heart);
+  }
+
+  /* ====== NEW GALLERY: 14 MEMORIES (PRESSABLE) ====== */
+  const galleryItems = [
+    { emoji: "📸💕", title: "first selfie together", desc: "You looked so shy but i saw the sparkle in your eyes. my heart fluttered." },
+    { emoji: "☕🍰", title: "coffee & cake date", desc: "You wiped cream off my nose and said i was cute. i melted right there." },
+    { emoji: "🌙💬", title: "2am talks", desc: "We laughed until our stomachs hurt. Those calls are my treasure." },
+    { emoji: "🎁💝", title: "surprise gift", desc: "You remembered a silly thing i mentioned once. that's when i knew you listened deeply." },
+    { emoji: "🌸🌿", title: "walk in the park", desc: "Hand in hand, talking about everything and nothing. pure bliss." },
+    { emoji: "🎨🧡", title: "painting night", desc: "We made a mess but created our own masterpiece — just like us." },
+    { emoji: "🍜🥢", title: "noodle wars", desc: "You gave me the last bite even though you wanted it. true love." },
+    { emoji: "📖✨", title: "reading together", desc: "Your voice is my favorite sound. you made the story magical." },
+    { emoji: "🎮👾", title: "gaming victories", desc: "You cheered for me louder than anyone. best teammate ever." },
+    { emoji: "☀️🧺", title: "lazy sunday", desc: "No plans, just us. those simple hours mean the world to me." },
+    { emoji: "🎄💞", title: "holiday magic", desc: "December felt like a fairytale because you were next to me." },
+    { emoji: "💌💫", title: "love notes", desc: "Every little note you leave makes me fall harder. keep them coming." },
+    { emoji: "🐱💤", title: "nap time calls", desc: "Falling asleep on the phone, waking up to your voice. home." },
+    { emoji: "🌟🤍", title: "our future dreams", desc: "Talking about all the places we'll go. with you, anywhere is paradise." }
+  ];
+
+  const galleryGrid = document.getElementById("memoryGallery");
+  galleryItems.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "memory-card";
+
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "img-placeholder";
+    imgDiv.innerText = item.emoji;
+
+    const titleDiv = document.createElement("div");
+    titleDiv.className = "memory-title";
+    titleDiv.innerHTML = `${item.title} <span class="tap-hint">(tap me)</span>`;
+
+    const hiddenDiv = document.createElement("div");
+    hiddenDiv.className = "hidden-message";
+    hiddenDiv.innerText = item.desc;
+
+    card.appendChild(imgDiv);
+    card.appendChild(titleDiv);
+    card.appendChild(hiddenDiv);
+
+    card.addEventListener("click", () => {
+      hiddenDiv.classList.toggle("show");
+      if (hiddenDiv.classList.contains("show")) {
+        // tiny confetti burst on reveal
+        confetti({ particleCount: 20, spread: 40, origin: { y: 0.85 }, colors: ['#ffb7c5', '#ffd98e'] });
+      }
+    });
+
+    galleryGrid.appendChild(card);
+  });
+
+  /* ====== CONFETTI ON LOAD ====== */
+  window.onload = () => {
+    for (let i = 0; i < 80; i++) {
+      const c = document.createElement("div");
+      c.style.position = "fixed";
+      c.style.width = "6px";
+      c.style.height = "6px";
+      c.style.background = "#ffd6e8";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.top = "-10px";
+      c.style.opacity = Math.random();
+      c.style.animation = `fall ${2 + Math.random()*3}s linear`;
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }
+    confetti({ particleCount: 180, spread: 85, origin: { y: 0.5 } });
+  };
+  // simple fall keyframes (injected)
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = `@keyframes fall { to { transform: translateY(100vh); opacity: 0; } }`;
+  document.head.appendChild(styleSheet);
 </script>
 </body>
 </html>
-
