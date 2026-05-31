@@ -874,23 +874,228 @@
 </div>
 
 <script>
-    // (All the JavaScript remains the same as before, including arrays for beginningPhotos and allScreenshots)
-    // For brevity, I'll include the full arrays as in the previous version.
-    // But note: I need to ensure the modal scrolling works and that screenshot cards have no description text.
-    // I will reuse the previous data arrays but modify the card creation function for screenshot collections to not show description.
-    // Since the full code is very long, I'll provide the essential changes and trust that the full arrays are present.
-    // In the actual answer, I will include the complete script with all data.
-    
-    // [The full JavaScript will be included in the final answer - same as before but with adjusted card creation]
-    // To save space here, I'll summarize: 
-    // - beginningPhotos array (32 items) unchanged
-    // - allScreenshots array (32 items) unchanged
-    // - createPhotoCardForGallery(no description) for screenshot collections
-    // - loadBeginningWing uses createPhotoCardWithDesc (shows description in card)
-    // - loadScreenshotCollections uses createPhotoCardWithoutDesc (image only)
-    // - modal open still shows full description
-    
-    console.log("Ready");
+    // ======================== COUNTDOWN & INIT ========================
+const startDate = new Date("2025-12-18T20:50:00");
+const targetDate = new Date("2027-01-01T00:00:00");
+
+function updateCountdown() {
+    const now = new Date();
+    let diff = targetDate - now;
+    if (diff < 0) diff = 0;
+    const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("months").innerText = Math.floor(totalDays / 30);
+    document.getElementById("days").innerText = totalDays % 30;
+    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+    document.getElementById("sinceDays").innerText = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+function reveal() {
+    const s = document.getElementById("secretText");
+    if (s) {
+        s.style.display = s.style.display === "block" ? "none" : "block";
+        if (s.style.display === "block") canvasConfetti({ particleCount: 80, spread: 60, origin: { y: 0.7 } });
+    }
+}
+function toggleLove() {
+    const p = document.getElementById("loveParagraph");
+    if (p) {
+        p.classList.toggle("show");
+        if (p.classList.contains("show")) canvasConfetti({ particleCount: 50, spread: 50, origin: { y: 0.6 } });
+    }
+}
+function revealMembership() {
+    const m = document.getElementById("membershipContent");
+    if (m) {
+        m.style.display = "block";
+        canvasConfetti({ particleCount: 150, spread: 70, origin: { y: 0.5 }, colors: ['#c7a76b', '#f5deb3'] });
+    }
+}
+
+// floating hearts
+const heartsContainer = document.querySelector('.hearts');
+if (heartsContainer) {
+    const symbols = ['♡', '🥞', '🌷', '✿'];
+    for (let i = 0; i < 40; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.fontSize = (10 + Math.random() * 26) + 'px';
+        heart.style.color = ['#FFD6E0', '#ffcad4', '#f5deb3', '#e8c97a'][Math.floor(Math.random() * 4)];
+        heart.style.animationDuration = (10 + Math.random() * 16) + 's';
+        heart.style.animationDelay = Math.random() * 14 + 's';
+        heartsContainer.appendChild(heart);
+    }
+}
+
+// museum mode on scroll
+const museumTrigger = document.getElementById('museumTrigger');
+if (museumTrigger) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            document.body.classList.toggle('museum-mode', entry.isIntersecting);
+        });
+    }, { threshold: 0.1 });
+    observer.observe(museumTrigger);
+}
+
+// ======================== MODAL (fullscreen image with scrollable description) ========================
+function openModal(imgSrc, description) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalDesc = document.getElementById('modalDesc');
+    if (modal && modalImg && modalDesc) {
+        modalImg.src = imgSrc;
+        modalDesc.innerText = description;
+        modal.classList.add('active');
+    }
+}
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    if (modal) modal.classList.remove('active');
+}
+
+// ======================== BEGINNING WING (32 photos with descriptions on cards) ========================
+const beginningPhotos = [
+    { src: "IMG_6353.png", description: "“ooohh oohhh nonchalant booy” HAHAHAHHAHAHAHA BABYY you were really nonchalant back then and it kinda scared me because i thought you’d do the same to me as those uhm talking stages that youd DROP but YOU DIDNT YAYAYAYAYAYYA 5 months in and you didnt do it. i thiiink i can trust you AWH I LOVE YOU" },
+    { src: "IMG_6355.png", description: "well baby we realized that there was indeed someone slower than you. and that was meta ai. BUT YOURE STILL MY SUUPER DUUPER SMART BOY OKAY. anyways we were looking for a 67 theme because it was the only thing we bonded over at the time and i asked meta ai if it could make one but instead it had the gayest response EVER. j remember i laughed super hard. all rhat hard work just for ahmed (boo eww)  to change the theme to boobs and tell you man up BABBYBYBBH" },
+    { src: "IMG_6356.png", description: "idk why i added this but its so cute that you know that i wanted to get married to chocolate if i could☹️☹️ we were meant yo be from thr beginning. bur anyways baby i found it super funny that you also said a person who thinks because yes. youre just funny and i laugh cause i want some of that dih wink wink" },
+    { src: "IMG_6358.jpeg", description: "i loved this screenshot so much cause its just like us now ☹️☹️ WE FORESHADOWED and i completely forgot you liked that giraffe sticker i think you did too baby but you used it aalooott" },
+    { src: "IMG_6360.jpeg", description: "this was one of the times we slightly flirted, i find ut super duper funny cause we were both shy and i tried to change the convo because i got nervous 🙄🙄🙄 yes i DIIIDD get nervous but baby after everytime we flirted i used to stare into the ceiling and smile super hard and yes i just loved you so much AAAND NOW I LOVE YOU SO MUCH MORE" },
+    { src: "IMG_6362.jpeg", description: "i literally was laughing so hard at this bevause we both said mhmmm too much back then and we booothb knoooww yhat we did it to subtly flirtt but baby the fact that i was copying you without even realizing it. hmm maybe it was cause i just got so used to being around you but we were already matching energies before we even knew it. AND YOU WERE SO CUYE BABYYY YOU ADMITTED TO TAKE LONGGNNGN. like yes baby i will sit there and wait and then smile at myself like an idiot. AND I STILL DO. every single day. i love you so much ☹️☹️" },
+    { src: "IMG_6363.jpeg", description: "you were giving me attitude so i taught you how to speak royal english to me and  you were confused i think.. \"i am sorry maam. i did not intend to indirectly give you attitude, may you inform me what blablabka idk why i did all that yapping BABY WHO TALKS LIKE THAT idk victorian childten maybe  AND THEN YOU SAID \"i will only say the first sentence and THATS IT\" like okay woah yes mr. fancy pants. but it was so cute and it made me giggle so hard. you were trying so hard to understand me in general you're always you and i love that so much. you make me laugh without even trying." },
+    { src: "IMG_6365.jpeg", description: "BABY YOU WERE SO CUTEEEEE. the way you realized you messed up and uhm did the switch up so quickly. i was just teasing you.  i liked teasing alot. I STILL DO AND YOU APOLOGIZED SO FAST MYHWART AWHHH. you always do that. even when you didn't do anything wrong you still say sorry because you care so much about how i feel. that's one of the million reasons i love you." },
+    { src: "IMG_6367.jpeg", description: "you sent me a tiktok and said \"so much effort just for u\" BABY YOU WERE SO DRAMATIC FORWHAT ☹️☹️☹️☹️ you literally just scrolled for two seconds and you acted like you climbed mount everest for me. \"never again\" you said. HMMMMMM i wonder what december you has to say about you nooowww. you can never stay away from putting in effort for me. you loveee taking care of me and makinf sure im okay☹️☹️ you're so adorable and i see right through you." },
+    { src: "IMG_6369.jpeg", description: "youuuu saaiidd that  \"im sensitive\" 😡😡😡😡 IM NOT but theen you proceeded to switch up in like two seconds. you're so cute and adorable and oerfect and handsome and everything without even realizing it. i can never stay mad at you even when i someetimess pretend to be. you literally forgive me before i even finish apologizing. that's how much youre used to me and it makes me want to squeeze your face. i love you i love you i love you." },
+    { src: "IMG_6371.jpeg", description: "\"okay whatever makes you feel biiiiigggg and strooonggg\" i kinda just wanted to see you again but i stretched the words to make fun of you and kinnda flirt. i was being so annoying and you handled it so well. \"whyd you stretch the words\" HMMMMM I WOONDERR WHYY BANYY but then you said \"YEAH NO I ALREADY AM ALL THAT\" and rhen i said “only you see it\" bur baby i think now i see it more than you do. you were so confident and cocky sometimes but then you also got shy when i compliment you too much. the duality drives me insane. I LOVE YOU. and i love us and i miss when we were shy" },
+    { src: "IMG_6372.jpeg", description: "i said \"you stole my whole personality\" HAHAHAHAHAHAHAHAHAHAHHAHAHAHA you kinda did baby.  AND I SAID \"because you love me sm\" AND YOU SAID \"NAAHH WTHHH\" BUT WE BOTH KNEEEWW IY WAS TRUE. i know i was your tole model because i loved you like no one did but you said \"NO GET OUT\" but you caant denyy iiitt we're literally the same person even back theeen but now youre me and i love it. you can't hide from me baby. you're stuck with me forever." },
+    { src: "IMG_6373.jpeg", description: "baby \"ofcourse you wanna be me\" \"ion blame you\" THE CONFIDENCE IS CRAZY. but also... fair. you're pretty perfect baby. I GUESS. (i know it bur i jist wanna act like old us)" },
+    { src: "IMG_6374.jpeg", description: "\"STOP\" \"wjy are we alike\" hmmm i think this was when i realized you were made for mee we were meant to find each other. there's no other explanation. we're literally the same person in two different bodies. i thank allah every single day for making us cross paths. i cant imagine a life without you in it" },
+    { src: "IMG_6375.jpeg", description: "i think you completely disagree with old you baby. but i think you knew i was right. you're perfect to me i love you myheartt i think i need you in my life more rhan anything" },
+    { src: "IMG_6377.jpeg", description: "you were listening to quran while on break AND I SAID \"I LOVE HOW YOU LISTEN TO QURAN ALOT\" ☹️☹️ because i do baby this made my heart so full. you don't even realize how attractive it is seeing you prioritize your deen even when you're busy or tired or distracted. it makes me want to be better for you. you inspire me every single day to be closer to my faith. i will never stop being grateful to Allah for bringing you into my life. you're genuinely such a blessing myheart ☹️☹️☹️" },
+    { src: "IMG_6380.jpeg", description: "you said \"im issac\" AND BABY I SAID IM NEWTON BEFORE RHAT BUT I DOONTT THINK YOU REALIZED HES THE AAME PERSON you literally  BUT YOU DOOO STILL MAKE ME LAUGH ALOT i said it and i stilll mean it. you have no idea how much joy you bring into my life. even when you're being stupid, you're making me happy. i love you so much it's actually insane." },
+    { src: "IMG_6382.jpeg", description: "baby you are sexy. you are a star. you're the brightest thing in my life and i hope you never forget that. even when you're joking, i need you to know that i mean it when i say you're everything to me. even if i was referring to myself in that screenshot vut ykwim baby you da real sexy" },
+    { src: "IMG_6384.jpeg", description: "some ofour first good morning texts ☹️☹️☹️ BABY YOU WERE SO CUTE. MY BABY HAS PUFFY EEEYEESS AWWWWH  i love these little moments so much. the ordinary texts that don't seem like much but they meant everything to me. waking up to your messages became my favorite part of the day." },
+    { src: "IMG_6385.jpeg", description: "thats when i realized i really missed you while you were at schoooll. i hope youu missed me. i remember i counted down the hours until you were and then you had a nightmare ☹️ (it wasnt serious but like ☹️☹️ MY BABY HAS NIGHTMAREEESA) i wish i could have been there to hold your hand and kiss you and gibe you the love you deserve baby" },
+    { src: "IMG_6386.jpeg", description: "this was when we would stay up together late all nighy flirting and stuuuuff. i obviously cared about you getting rest even when i wanted to keep talking. wnd to meeee that's real love baby. choosing what's best for you even when it's hard for you. you do it alot to me and sometimes i dont like ot but i definitely see it and i appreciate it more than you know. you're so thoughtful even when you get mad at me😡😡😡" },
+    { src: "IMG_6388.jpeg", description: "baby things like this neeeed to be added becauseee its just so cute and it makes me smile aloott" },
+    { src: "IMG_6389.jpeg", description: "i was so attached already and it made my heart so full. \"thats like lowk cute but js lowk\"☹️☹️☹️☹️☹️☹️☹️ myheart☹️ youre so precious baby. you had me wrapped around your finger from the very beginning and you didn't even know it. i love you so much." },
+    { src: "IMG_6390.jpeg", description: "you said  thaaatt youll tel the teachrr that its myyy fault for making you stay up. BUT IT WAS aall to play a guessing gameee but hmm BABY YOU WERE SO READY TO BLAME ME. i miiight havee  kept you up. but you loved every second of it. you could have gone to sleep anytime but you chose to stay with me. you chose me. and you keep choosing me every single day. i will never take that for granted." },
+    { src: "IMG_6391.jpeg", description: "i guessed youuurr favorite color AND I WAS SHOCKED TOOOO. baby i was reaching flow state. it felt like you knew me so well already and i did the same for you. iys like our souls were connected wayy before but we had only been talking for a few days. im literally magic. or we're just soulmates. i think both. nonon i knooww so" },
+    { src: "IMG_6392.jpeg", description: "you said \"WOAH YOU'RE SO DEMANDY ISTGG\" but ik you like that daddy wink wink its what turns you on HHHMMMMM" },
+    { src: "IMG_6394.jpeg", description: "hmmm i kept forcing you to playbwith me these guessing games i still dooo. buutt i loved how i just bossed you around and you agreed baby. #bringitback tskl now yoi fight back😡😡" },
+    { src: "IMG_6395.jpeg", description: "you called yourself stupid and then corrected yourself \"im stupid\" \"no im smart\" in the same message. BABY. BABY. \"god forbid\" i said. \"Ofcourse you are\" i said. you're so funny without even trying. the way your brain works is so entertaining to me. you keep me laughing every single day. and yes baby you're smart. you're the smartest person i know. don't ever let anyone tell you otherwise. especially not yourself." },
+    { src: "IMG_6397.jpeg", description: "baby you were ragebaited easily and it was so cute. i felt bery stupid agter you told me how to spell your name cause irs basic common sense but i still called you red sometimes and i love it. it was our thing kiindaa." },
+    { src: "IMG_6398.jpeg", description: "m the personality you need baby.nand i wiiilll beee forever and ever. i think i made you chalant again baby didnt i i think you copied my entire personality now. everything i do, every thought i have hmmm maybeee every heartbeat i take but i love it i loge jow you and i are the same person in different fonts. and somehow everything leads back to you. you've become such a huge part of who i am and i wouldn't have it any other way. you're not just my boyfriend, you're my best friend. i love you." },
+    { src: "IMG_6402.jpeg", description: "TSKSKSKSKKS BABY. BABY. you're so unserious. i thoigjy you meant ass hair. even now when you explaijed i thoughy jt was ass hair. 😡😡 bit i love that about you. you don't take yourself too seriously and it makes me feel so  super duper comfortable around you. you can be silly and weird and dumb and i'll still look at you like you hung the moon. because you did. you hung MY moon. and made my night shine again" },
+    { src: "IMG_6404.jpeg", description: "FATTIEBUDDYBOY WOAAHH doesnt that bring back alot of memories hmm. the way you just kept going. hmmm you almosy convinced me that you were sendinf a picture of yourseeelf bur baby you're not fat orr skinny you're perfect. and i want to kiss your face so badly it hurts." },
+    { src: "IMG_6407.jpeg", description: "this is a recent oke but its related to the pastt. you said \"Baby when i met you i started to learn what those numbers meant\" ☹️☹️☹️ BABY. BABY THIS ONE MADE ME CRY AWH. you learned what the arabic english thing letters meant. you paid attention to the little things. you cared about knowing me. not just the surface level stuff but the real me. the me that hides behind numbers and jokes and sarcasm. you wanted to understand me and you never stopped trying. that's why i love you. that's why i will always love you. you saw me and you stayed." }
+];
+
+// ======================== SCREENSHOT COLLECTIONS (32 images, no descriptions on cards) ========================
+const allScreenshots = [
+    { src: "IMG_9799.jpeg", description: "awh babyy\nbaby but you have to promise to stay with me okay.\nwoah baby.\nwoah\nI promise baby\nin my eyes your already the mother of my kids\nSO\nWHY WOULD YOU SAY THAT\nTSSKK" },
+    { src: "IMG_0046.jpeg", description: "baby i need to shssisiishiit\nwoah\nbaby\nme too\nwoaahh baby\nlets\nshit together\nbaby in my opinion\nwhen we have our own house\ninshallah\nwe should\nlike get double toilets" },
+    { src: "IMG_0272.jpeg", description: "iloveyouwaymore\nbabyyyynoooo\nlloveyouthemostest\nwait baby yes actually you love me\nway way more than" },
+    { src: "IMG_0462.jpeg", description: "You replied\nI lovest you mostestest of the mostest\nbaby\nBOOOOOMMM\ni love you the mostestestester of the\nmost mostest mosters\nBOOOOOMM\nwoah baby\ni have a monster in my pants\nBOOOMM" },
+    { src: "IMG_1238.jpeg", description: "baby i think im so superbly duperly inlove with you\nnonono\ni know so\nawh babybbyb\nYAYYAYAYAYAYAYYA\nMY GIRLFRIEND IS INLOVE WITH MEEE\nAWHH YAYAYAYA\nwell babyy\nIm way more inlove with you awhhh" },
+    { src: "IMG_2426.jpeg", description: "baby you're the definition of love" },
+    { src: "IMG_2757.jpeg", description: "baby\nhws\nlooking at the screen now\nsay hi\nwoaajh\nhi\nAWWWWW\nim inlove with your sister\nMY BABYY\nYou replied\nim inlove with your sister\nwoah" },
+    { src: "IMG_3089.jpeg", description: "baby they look so good\nBaby everytime i look at nutella\nit reminds me of you\nbaby i think that\neverything reminds me of you" },
+    { src: "IMG_4373.png", description: "BABYYYYY\nilovemygirlfreind67\nmini you\nmylovee awh why are you so pretty and cute and so perfect and\njust so\nRRAAAHHHHH" },
+    { src: "IMG_4376.jpeg", description: "BABBYBY\nSHSHHSHSHS\naöswh\nahw\nmy pretty girl" },
+    { src: "IMG_4423.png", description: "BABYYYYY\nilovemygirlfriend67\nmini you\nawh\nbaby youre like\nmy other half\nBaby like\nyou cluld\nhold my doc\ndih\nwhile\nscrolling reels\nor\njust\ndoing anything\nand id let you" },
+    { src: "IMG_4766.jpeg", description: "Replied to you\nsuper pretty so\nLightwork for you babybbyyyy." },
+    { src: "IMG_5737.jpeg", description: "do i look like\na pixel\nNew messages\nwiah\nidk who ttat is baby but\nyou look\nso perfect" },
+    { src: "IMG_0462.jpeg", description: "You replied\nI lovest you mostestest of the mostest\nbaby\nBOOOOOMMM\ni love you the mostestestester of the\nmost mostest mosters\nBOOOOOMM\nwoah baby\ni have a monster in my pants\nBOOOMM (second)" },
+    { src: "IMG_0263.jpeg", description: "Baby\nbut like you promise you wont fight about it\nbabbyy\nPROMISE\nUnless its about I love you thing than no I wont fight abt it I promise" },
+    { src: "IMG_4426.png", description: "BABYYYYY\nilovemygirlfreind67\nmini you\nbaby\nname a country with the letter v\nvinland\nYES\nI KNEW UOUD\nGET IT\nwoaahh\nYAYAYAYAYAYAYA\nI PINKYB PROMISE\nI WAS LIKE\nI HOPE HE\nGE" },
+    { src: "IMG_4431.jpeg", description: "when i told uou idtake\n❤️\npics\nWHAT DID YOHEXPECT\nUhm\nyou taking the\npictures\nBABY." },
+    { src: "IMG_5522.jpeg", description: "Replied to you\nwho do you see yourself in\nyou\nBABY WHAT THE\nIM BEING SERIOUS\nME TOOO\nWHAT THE\nBABY.\ni see myself being in you" },
+    { src: "IMG_4331.png", description: "[ilovemygirlfreind67] RAYABABYYY\nbwby.\nmini you\ni think i sent this\nwoah\nI DIDNTV\nnoway baby\nWoah\nWHAT\nwhat tv baby\nbwby." },
+    { src: "IMG_8801.jpeg", description: "DEC 18 AT 8:50PM\nYou replied to their note • Pinned\nNote unavailable\nhihihi\nDid I say smth funny 😂\njoking\nhii\nIM GIGGLING STOP 😂\nhi tho\nhru\nHello tho\nim good\nlike alright" },
+    { src: "IMG_1940.png", description: "i love youuu\nNO\nnot true baby\nlying is so haram baby\ntodsy in the masjid they said\nthat allah said\nin the quran\npeople who lie while fasting\ndont get any reward\nand that they are just starving\nfor nothing\nBOOOMM\nfor longer\nWHAT THE" },
+    { src: "IMG_1946.png", description: "BABYYYYY\nuser.not.found.671ol\nResults view. Go to newest messages\ni think\nyou're still\nasleep\nhmm well baby\nit was finled with. gemicals\nchemicals anndd\nyes bab\nyou were what baby.\nBABG WHAT\nARE YOU\nSAYING\nWHAT WAS WITH CHEMICSLS\nbaby idek what i was saying" },
+    { src: "IMG_3723.jpeg", description: "BABYY IT LOOKS\nTERRIFYING\nterryfiyng\nterrifying\nterrifying\nterrible\nyes baby" },
+    { src: "IMG_3444.jpeg", description: "New Messages\nhand polish\nBOOMMM\nits blush baby\nyou cant out smart me\noh\nMessage...\nthe\ni'm\nq\nw\ne\nr\nt\ny\nu\np" },
+    { src: "IMG_4331.png", description: "[ilovemygirlfreind67] RAYABABYYY\nbwby.\nmini you\ni think i sent this\nwoah\nI DIDNTV\nnoway baby\nWoah\nWHAT\nwhat tv baby\nbwby. (second)" },
+    { src: "IMG_6045.png", description: "11:29\nBABYYYYY\nilovemygirlfreind67\nmini you\nAWH\nYES MYHEARTT\nyes bwbby\ndo you like trump\nNew messages\nyes baby" },
+    { src: "IMG_5811.jpeg", description: "HII MYLOVEVEVVE\nYou replied\nyoure bald 😂😂😂\nhey.\nBYE MYLOVE" },
+    { src: "IMG_6449.jpeg", description: "BABYBBY\ni told him\ni will tell the teacher\nhis shitting coming out of his\nmouth\nwhat the\ni meant\nhis shit is\ncoming out of his mouth\nnow i look shizo\nand like a retard" },
+    { src: "IMG_6450.jpeg", description: "Replied to you\nsomeone ate my underwear\nBABYBYB\nHAHAHAHAHHA\nme" },
+    { src: "IMG_6451.jpeg", description: "whats something\nthat i said\nthat makes you laugh alot\nthat\nyou love me more\nWHAT THE" },
+    { src: "IMG_6434.jpeg", description: "what did you dream about\nmylovee\nidk baby it was super short\nbaby she was like\nBABYYYYYY · Pinned\nmini you\nand was running towards me\nand thats it.\nand then i woke up\nand my eyes were watery" }
+];
+
+// Helper functions to create cards
+function createCardWithDesc(src, desc) {
+    const card = document.createElement('div');
+    card.className = 'artifact-card';
+    const img = document.createElement('img');
+    img.src = src;
+    img.onerror = () => img.src = 'https://placehold.co/200x200/ffcad4/4b2326?text=❤️';
+    const descDiv = document.createElement('div');
+    descDiv.className = 'artifact-desc';
+    descDiv.innerText = desc.length > 100 ? desc.substring(0, 100) + '...' : desc;
+    card.appendChild(img);
+    card.appendChild(descDiv);
+    card.onclick = () => openModal(src, desc);
+    return card;
+}
+
+function createCardWithoutDesc(src, desc) {
+    const card = document.createElement('div');
+    card.className = 'artifact-card';
+    const img = document.createElement('img');
+    img.src = src;
+    img.onerror = () => img.src = 'https://placehold.co/200x200/ffcad4/4b2326?text=❤️';
+    card.appendChild(img);
+    card.onclick = () => openModal(src, desc);
+    return card;
+}
+
+// Load Beginning Wing
+function loadBeginningWing() {
+    const grid = document.getElementById('beginningWingGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    beginningPhotos.forEach(p => grid.appendChild(createCardWithDesc(p.src, p.description)));
+}
+
+// Load Screenshot Collections
+function loadScreenshotCollections() {
+    const sweetIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 31];
+    const chaoticIndices = [13, 14, 15, 16, 17, 18];
+    const laughingIndices = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+    const sweetGrid = document.getElementById('sweetCollectionGrid');
+    const chaoticGrid = document.getElementById('chaoticCollectionGrid');
+    const laughingGrid = document.getElementById('laughingCollectionGrid');
+    if (sweetGrid) {
+        sweetGrid.innerHTML = '';
+        sweetIndices.forEach(i => sweetGrid.appendChild(createCardWithoutDesc(allScreenshots[i].src, allScreenshots[i].description)));
+    }
+    if (chaoticGrid) {
+        chaoticGrid.innerHTML = '';
+        chaoticIndices.forEach(i => chaoticGrid.appendChild(createCardWithoutDesc(allScreenshots[i].src, allScreenshots[i].description)));
+    }
+    if (laughingGrid) {
+        laughingGrid.innerHTML = '';
+        laughingIndices.forEach(i => laughingGrid.appendChild(createCardWithoutDesc(allScreenshots[i].src, allScreenshots[i].description)));
+    }
+}
+
+// Run on page load
+window.onload = () => {
+    canvasConfetti({ particleCount: 180, spread: 85, origin: { y: 0.5 } });
+    setTimeout(() => canvasConfetti({ particleCount: 120, spread: 100, origin: { y: 0.4 } }), 300);
+    loadBeginningWing();
+    loadScreenshotCollections();
+};
 </script>
 </body>
 </html>
