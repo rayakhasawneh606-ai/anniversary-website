@@ -511,7 +511,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            overflow-y: auto; /* allows scrolling if content exceeds viewport */
+            overflow-y: auto;
         }
         .modal-content img {
             max-width: 100%;
@@ -558,7 +558,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* date inputs inside future wing */
         .future-date-input {
             width: 100%;
             padding: 8px;
@@ -701,46 +700,42 @@
             <button class="enter-museum-btn" onclick="document.getElementById('room1').scrollIntoView({behavior:'smooth'})">Enter Museum</button>
         </div>
 
-        <!-- ROOM 1: The Beginning Wing (32 photos from earlier) -->
+        <!-- ROOM 1: The Beginning Wing -->
         <section class="museum-room" id="room1">
             <h2 class="room-title">The Beginning Wing</h2>
             <div id="beginningWingGrid" class="artifact-grid"></div>
         </section>
 
-        <!-- Final Message after the Beginning Wing -->
         <div class="final-message" style="max-width: 800px; margin: 50px auto 20px; background: rgba(0,0,0,0.4); border-radius: 28px; padding: 30px 24px; border-left: 4px solid var(--gold); text-align: left;">
             <p style="font-size: 1.1rem; line-height: 1.8; color: var(--cream-warm);">
                 BABYYY we did it. this ks a note from uhm past me. I DID all 37 screenshots. all these little moments that built our story. every single one of them is a piece of my heart. i love you more than words can say and i'm so grateful that you chose me. to many more months and many more screenshots. i love you i love you i love you. ♡
             </p>
         </div>
 
-        <!-- ROOM 2: Screenshot Gallery - now with three collections -->
+        <!-- ROOM 2: Screenshot Gallery (descriptions removed from cards, kept in modal) -->
         <section class="museum-room" id="room2">
             <h2 class="room-title">The Screenshot Gallery</h2>
             
-            <!-- Sweet Collection (photos 1-13 + 32) -->
             <div class="collection-subtitle">🍬 Sweet Collection</div>
             <div id="sweetCollectionGrid" class="artifact-grid"></div>
             
-            <!-- Chaotic Collection (photos 14-19) -->
             <div class="collection-subtitle" style="margin-top: 40px;">🌀 Chaotic Collection</div>
             <div id="chaoticCollectionGrid" class="artifact-grid"></div>
             
-            <!-- Laughing Collection (photos 20-31) -->
             <div class="collection-subtitle" style="margin-top: 40px;">😂 Laughing Collection</div>
             <div id="laughingCollectionGrid" class="artifact-grid"></div>
         </section>
 
-        <!-- ROOM 3: Things You Never Knew -->
+        <!-- ROOM 3: Things You Never Knew – now a mystery -->
         <section class="museum-room" id="room3">
             <h2 class="room-title">The Things You Never Knew Wing</h2>
-            <div class="before-after-case">
-                <div class="case-panel"><h4>Before You</h4><p>I hated men. I swore I'd never open up again. My walls were sky-high and I was fine with that.</p></div>
-                <div class="case-panel"><h4>After You</h4><p>I've never put so much effort into anyone. You made me believe love could be soft.</p></div>
+            <div style="text-align: center; padding: 50px 20px;">
+                <div style="font-size: 5rem; color: var(--museum-gold); margin-bottom: 20px;">?</div>
+                <p style="font-size: 1.5rem; color: var(--gold-light); font-style: italic;">Coming in 3 days…</p>
             </div>
         </section>
 
-        <!-- ROOM 4: Hall of Favorite Versions - updated descriptions -->
+        <!-- ROOM 4: Hall of Favorite Versions -->
         <section class="museum-room" id="room4">
             <h2 class="room-title">The Hall of Favorite Versions</h2>
             <div class="portrait-card">
@@ -765,7 +760,7 @@
             </div>
         </section>
 
-        <!-- ROOM 5: Future Wing - updated with date inputs for our future moments -->
+        <!-- ROOM 5: Future Wing – with date inputs for our moments -->
         <section class="museum-room" id="room5">
             <h2 class="room-title">The Future Wing</h2>
             <p style="color:#c7a76b; font-style:italic;">Enter the dates when these moments happen ♡</p>
@@ -797,20 +792,43 @@
             </div>
         </section>
 
-        <!-- GIFT SHOP -->
+        <!-- GIFT SHOP with the five-month love letter -->
         <section class="museum-room gift-shop" id="giftshop">
             <h2 class="room-title">Gift Shop</h2>
             <p class="shop-sign">Unfortunately, none of the exhibits are available for purchase. However, one lucky visitor has lifetime access to the entire collection.</p>
             <button class="claim-membership-btn" onclick="revealMembership()">Claim Lifetime Membership</button>
             <div class="membership-reveal" id="membershipContent">
-                <p style="font-size:1.2rem; color:#f5deb3;">[Your huge final love letter will appear here]</p>
+                <p style="font-size:1.2rem; color:#f5deb3; white-space: pre-line;">
+five months!!!!
+
+five months with you and i still don’t think my mind has fully caught up with how fast time has moved. it feels like i blinked and somehow you became such a big part of my life that i don’t even remember what it felt like before you were in it. i made this whole thing for you and i genuinely hope you like it because every single part of it is just me trying to put into words something that never really fits into words properly. you. us. everything we have
+
+i love you in a way that feels bigger than just saying it in passing. i love you in the way that shows up in everything i do without me even realizing it. these five months have honestly changed me in ways i don’t always know how to explain. you impacted my life in the best way possible just by being you just by staying just by choosing to be here even when things weren’t always easy
+
+i still can’t believe how fast time passed. it feels like we were just at the beginning figuring things out not knowing where anything was going and now here we are five months later and it feels so real so steady so ours. you are genuinely the most precious person in my life and i mean it with every bone in me. there is something about you that just feels safe even when everything else feels like too much. i know i say that alot but its all i feel mylove
+
+i am so proud of you. like really proud of you in a way that i think of all the time. i am proud of how you handle things how you keep going how you don’t give up even when things get hard. i am proud of the way you are growing even when you don’t always see it yourself. and i hope you know that even if i don’t always say it perfectly i see everything and i notice everything and i admire you more than you probably think
+
+i love how you handled me during my hard exam phase. i love how you didn’t make me feel guilty for not having enough energy. i love how you understood that i needed to focus and you didn’t turn it into something big or complicated. you just stayed. you just supported me. you just made things easier instead of harder and that meant more to me than i can probably ever explain properly. you made a stressful time feel less lonely and i will always remember that. 
+
+i love how you deal with me when i’m stressed. the way you don’t panic the way you don’t make it worse the way you somehow know exactly when to talk and when to just let me breathe. you understand me in a way that honestly still surprises me sometimes. like you just get it without me needing to over explain everything and that is something so rare to me
+
+you are my favorite person ever. like actually my favorite. not in a casual way but in a deep real way where even on the worst days i still want to talk to you. i still want you around. i still feel better just knowing you’re there
+
+and i love you mostest always and forever. i know that sounds simple but it carries everything i feel. every small moment every conversation every time you made me laugh when i didn’t feel like laughing every time you stayed when things weren’t perfect
+
+i am always going to be by your side no matter what happens no matter what changes no matter what life brings. no matter what we got through the hard phase and whatever is left is going to be easier because we already proved we can survive the hard parts
+
+and i can’t wait to see what allah has planned for us. whatever it is i hope it’s good i hope it’s kind i hope it’s something that keeps us growing together in the same direction
+
+i love you so much and i really hope you feel it in every single part of this website because every word here is just me trying to say something that is way bigger than words. our love.            HAPPY 5 MONTHS MY PRECIOUS BOYYY 🤍🤍
+                </p>
                 <div style="margin-top:20px; padding:20px; background:#1a0d0d; border-radius:12px;">
                     <p>🎥 Video surprise coming soon...</p>
                 </div>
             </div>
         </section>
 
-        <!-- Museum Statistics -->
         <div style="text-align:center; margin-top:50px; color:#c7a76b;">
             <p><strong>Current Collection:</strong> 5 Months · Hundreds of voice messages · Thousands of texts · Infinite reasons I love you</p>
             <p style="font-style:italic; margin-top:10px;">New exhibits added daily.</p>
@@ -892,7 +910,6 @@
     <p id="secretText">I don’t know how you fit into my life so naturally, like the missing piece to my incomplete puzzle. I never want to imagine it without you. to many more months babyyy i love you ♡</p>
 </main>
 
-<!-- Modal for fullscreen image -->
 <div id="imageModal" class="modal" onclick="closeModal()">
     <button class="close-modal" onclick="closeModal()">&times;</button>
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -902,9 +919,6 @@
 </div>
 
 <script>
-    // -------------------------------
-    // COUNTDOWN AND DAYS SINCE WE MET
-    // -------------------------------
     const startDate = new Date("2025-12-18T20:50:00");
     const targetDate = new Date("2027-01-01T00:00:00");
     function updateCountdown() {
@@ -934,7 +948,6 @@
         if (p.classList.contains("show")) confetti({ particleCount: 50, spread: 50, origin: { y: 0.6 } });
     }
 
-    // floating hearts
     const heartsContainer = document.querySelector('.hearts');
     const symbols = ['♡', '🥞', '🌷', '✿'];
     for (let i = 0; i < 40; i++) {
@@ -950,7 +963,6 @@
         heartsContainer.appendChild(heart);
     }
 
-    // museum mode activation on scroll
     const museumTrigger = document.getElementById('museumTrigger');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -969,7 +981,6 @@
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.5 }, colors: ['#c7a76b','#f5deb3'] });
     }
 
-    // Modal functions
     function openModal(imgSrc, description) {
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
@@ -989,9 +1000,6 @@
         loadScreenshotCollections();
     };
 
-    // -------------------------------
-    // BEGINNING WING (32 photos from previous)
-    // -------------------------------
     const beginningPhotos = [
         { src: "IMG_6353.png", description: "“ooohh oohhh nonchalant booy” HAHAHAHHAHAHAHA BABYY you were really nonchalant back then and it kinda scared me because i thought you’d do the same to me as those uhm talking stages that youd DROP but YOU DIDNT YAYAYAYAYAYYA 5 months in and you didnt do it. i thiiink i can trust you AWH I LOVE YOU" },
         { src: "IMG_6355.png", description: "well baby we realized that there was indeed someone slower than you. and that was meta ai. BUT YOURE STILL MY SUUPER DUUPER SMART BOY OKAY. anyways we were looking for a 67 theme because it was the only thing we bonded over at the time and i asked meta ai if it could make one but instead it had the gayest response EVER. j remember i laughed super hard. all rhat hard work just for ahmed (boo eww)  to change the theme to boobs and tell you man up BABBYBYBBH" },
@@ -1033,14 +1041,11 @@
         if (!grid) return;
         grid.innerHTML = "";
         beginningPhotos.forEach(photo => {
-            const card = createPhotoCard(photo.src, photo.description);
+            const card = createPhotoCard(photo.src, photo.description, true);
             grid.appendChild(card);
         });
     }
 
-    // -------------------------------
-    // SCREENSHOT COLLECTIONS (32 photos)
-    // -------------------------------
     const allScreenshots = [
         { src: "IMG_9799.jpeg", description: "awh babyy\nbaby but you have to promise to stay with me okay.\nwoah baby.\nwoah\nI promise baby\nin my eyes your already the mother of my kids\nSO\nWHY WOULD YOU SAY THAT\nTSSKK" },
         { src: "IMG_0046.jpeg", description: "baby i need to shssisiishiit\nwoah\nbaby\nme too\nwoaahh baby\nlets\nshit together\nbaby in my opinion\nwhen we have our own house\ninshallah\nwe should\nlike get double toilets" },
@@ -1075,14 +1080,11 @@
         { src: "IMG_6434.jpeg", description: "what did you dream about\nmylovee\nidk baby it was super short\nbaby she was like\nBABYYYYYY · Pinned\nmini you\nand was running towards me\nand thats it.\nand then i woke up\nand my eyes were watery" }
     ];
 
-    // Sweet: photos 1-13 + photo 32 (indexes 0-12 and 31)
-    // Chaotic: photos 14-19 (indexes 13-18)
-    // Laughing: photos 20-31 (indexes 19-30)
     const sweetIndices = [0,1,2,3,4,5,6,7,8,9,10,11,12,31];
     const chaoticIndices = [13,14,15,16,17,18];
     const laughingIndices = [19,20,21,22,23,24,25,26,27,28,29,30];
 
-    function createPhotoCard(src, description) {
+    function createPhotoCard(src, description, showDesc = true) {
         const card = document.createElement("div");
         card.className = "artifact-card";
         const img = document.createElement("img");
@@ -1090,19 +1092,21 @@
         img.alt = "Memory";
         img.style.width = "100%";
         img.style.borderRadius = "8px";
-        img.style.marginBottom = "10px";
+        img.style.marginBottom = showDesc ? "10px" : "0";
         img.style.aspectRatio = "1 / 1";
         img.style.objectFit = "cover";
         img.onerror = () => { img.src = "https://placehold.co/200x200/ffcad4/4b2326?text=❤️"; };
-        const descDiv = document.createElement("div");
-        descDiv.className = "artifact-desc";
-        descDiv.innerText = description.length > 100 ? description.substring(0, 100) + "..." : description;
+        card.appendChild(img);
+        if (showDesc) {
+            const descDiv = document.createElement("div");
+            descDiv.className = "artifact-desc";
+            descDiv.innerText = description.length > 100 ? description.substring(0, 100) + "..." : description;
+            card.appendChild(descDiv);
+        }
         card.addEventListener('click', (e) => {
             e.stopPropagation();
             openModal(src, description);
         });
-        card.appendChild(img);
-        card.appendChild(descDiv);
         return card;
     }
 
@@ -1115,21 +1119,21 @@
             sweetGrid.innerHTML = "";
             sweetIndices.forEach(idx => {
                 const photo = allScreenshots[idx];
-                if (photo) sweetGrid.appendChild(createPhotoCard(photo.src, photo.description));
+                if (photo) sweetGrid.appendChild(createPhotoCard(photo.src, photo.description, false));
             });
         }
         if (chaoticGrid) {
             chaoticGrid.innerHTML = "";
             chaoticIndices.forEach(idx => {
                 const photo = allScreenshots[idx];
-                if (photo) chaoticGrid.appendChild(createPhotoCard(photo.src, photo.description));
+                if (photo) chaoticGrid.appendChild(createPhotoCard(photo.src, photo.description, false));
             });
         }
         if (laughingGrid) {
             laughingGrid.innerHTML = "";
             laughingIndices.forEach(idx => {
                 const photo = allScreenshots[idx];
-                if (photo) laughingGrid.appendChild(createPhotoCard(photo.src, photo.description));
+                if (photo) laughingGrid.appendChild(createPhotoCard(photo.src, photo.description, false));
             });
         }
     }
